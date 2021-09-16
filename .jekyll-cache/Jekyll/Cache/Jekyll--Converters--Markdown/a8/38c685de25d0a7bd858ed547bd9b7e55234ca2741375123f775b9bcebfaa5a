@@ -1,0 +1,67 @@
+I"f<h3 id="config-파일을-수정해-보자">config 파일을 수정해 보자.</h3>
+
+<p>로컬 서버를 띄우는 데 성공했다면 이제 꾸미는 일만 남았다. 우리가 사용한 지킬 블로그 템플릿은 다양한 기능을 제공하므로 하나씩 알아보도록 하자.</p>
+
+<p>가장 먼저 <code class="language-plaintext highlighter-rouge">_config.yml</code> 파일을 수정하여 블로그의 기본적인 틀을 잡아보자.</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 블로그 배경 색을 정할 수 있습니다.</span>
+<span class="na">minimal_mistakes_skin    </span><span class="pi">:</span> <span class="s2">"</span><span class="s">dirt"</span> <span class="c1"># "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"</span>
+
+<span class="c1"># Site Settings</span>
+<span class="na">locale                   </span><span class="pi">:</span> <span class="s2">"</span><span class="s">ko-KR"</span> <span class="c1"># 언어 설정 바꾸기</span>
+<span class="na">title                    </span><span class="pi">:</span> <span class="s2">"</span><span class="s">minthing's</span><span class="nv"> </span><span class="s">blog"</span> <span class="c1"># 블로그 타이틀</span>
+<span class="na">title_separator          </span><span class="pi">:</span> <span class="s2">"</span><span class="s">-"</span>
+<span class="na">subtitle                 </span><span class="pi">:</span> <span class="c1"># site tagline that appears below site title in masthead</span>
+<span class="na">name                     </span><span class="pi">:</span> <span class="s2">"</span><span class="s">minthing"</span> <span class="c1"># 블로그에서 사용되는 이름</span>
+<span class="na">description              </span><span class="pi">:</span> <span class="s2">"</span><span class="s">내가</span><span class="nv"> </span><span class="s">하는</span><span class="nv"> </span><span class="s">일이</span><span class="nv"> </span><span class="s">나를</span><span class="nv"> </span><span class="s">정의한다</span><span class="nv"> </span><span class="s">✨."</span>
+<span class="na">url                      </span><span class="pi">:</span> <span class="s2">"</span><span class="s">https://minthing.github.io"</span> <span class="c1"># 블로그 url</span>
+<span class="na">baseurl                  </span><span class="pi">:</span> <span class="c1">#/blog</span>
+<span class="na">repository               </span><span class="pi">:</span> <span class="s2">"</span><span class="s">https://github.com/minthing/minthing.github.io"</span>
+</code></pre></div></div>
+
+<p>좀 더 하단으로 가시면 작성자 정보를 기입할 수 있습니다.</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">author</span><span class="pi">:</span>
+  <span class="na">name             </span><span class="pi">:</span> <span class="s2">"</span><span class="s">minthing"</span>
+  <span class="na">avatar           </span><span class="pi">:</span> <span class="s2">"</span><span class="s">/assets/images/avatar.jpeg"</span> <span class="c1"># 내 캐릭터</span>
+  <span class="na">bio              </span><span class="pi">:</span> <span class="s2">"</span><span class="s">💻</span><span class="nv"> </span><span class="s">&amp;</span><span class="nv"> </span><span class="s">📖</span><span class="nv"> </span><span class="s">&amp;</span><span class="nv"> </span><span class="s">✍️"</span>
+  <span class="na">location         </span><span class="pi">:</span> <span class="s2">"</span><span class="s">korea"</span>
+  <span class="na">email            </span><span class="pi">:</span>
+  <span class="na">links</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">label</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Email"</span>
+      <span class="na">icon</span><span class="pi">:</span> <span class="s2">"</span><span class="s">fas</span><span class="nv"> </span><span class="s">fa-fw</span><span class="nv"> </span><span class="s">fa-envelope-square"</span>
+      <span class="c1">#url: ""</span>
+    <span class="pi">-</span> <span class="na">label</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Website"</span>
+      <span class="na">icon</span><span class="pi">:</span> <span class="s2">"</span><span class="s">fas</span><span class="nv"> </span><span class="s">fa-fw</span><span class="nv"> </span><span class="s">fa-link"</span>
+      <span class="na">url</span><span class="pi">:</span> <span class="s2">"</span><span class="s">mber.tistory.com"</span>
+    <span class="c1"># - label: "Twitter"</span>
+    <span class="c1">#   icon: "fab fa-fw fa-twitter-square"</span>
+    <span class="c1">#   # url: "https://twitter.com/"</span>
+    <span class="c1"># - label: "Facebook"</span>
+    <span class="c1">#   icon: "fab fa-fw fa-facebook-square"</span>
+    <span class="c1">#   # url: "https://facebook.com/"</span>
+    <span class="pi">-</span> <span class="na">label</span><span class="pi">:</span> <span class="s2">"</span><span class="s">GitHub"</span>
+      <span class="na">icon</span><span class="pi">:</span> <span class="s2">"</span><span class="s">fab</span><span class="nv"> </span><span class="s">fa-fw</span><span class="nv"> </span><span class="s">fa-github"</span>
+      <span class="na">url</span><span class="pi">:</span> <span class="s2">"</span><span class="s">https://github.com/minthing"</span>
+    <span class="c1"># - label: "Instagram"</span>
+    <span class="c1">#   icon: "fab fa-fw fa-instagram"</span>
+    <span class="c1">#   # url: "https://instagram.com/"</span>
+
+</code></pre></div></div>
+
+<p>그 다음 카테고리를 지정해 줄 겁니다. <code class="language-plaintext highlighter-rouge">_data/navigation.yml</code>을 수정해 줍니다.</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># main links</span>
+<span class="na">main</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">👋"</span>
+    <span class="na">url</span><span class="pi">:</span> <span class="s">/about/about/</span>
+  <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">🗃"</span>
+    <span class="na">url</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/categories/"</span>
+  <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">🏷"</span>
+    <span class="na">url</span><span class="pi">:</span> <span class="s">/tags/</span>
+</code></pre></div></div>
+
+<p>이제 나머지는 css 등 자기가 원하는 대로 커스터마이징 해주면 됩니다! 로컬 환경에서 블로그를 열어 테스트 한 후 배포하면 됩니다. ✨</p>
+
+<p><code class="language-plaintext highlighter-rouge">test/_pages</code> 또는 <code class="language-plaintext highlighter-rouge">test/_posts</code>등을 참고하시면 도움이 될 겁니다.</p>
+:ET

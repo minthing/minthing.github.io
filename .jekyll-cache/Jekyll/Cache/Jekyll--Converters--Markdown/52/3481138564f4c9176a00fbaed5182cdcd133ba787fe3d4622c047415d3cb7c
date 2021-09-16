@@ -1,0 +1,23 @@
+I"Z
+<h3 id="config-파일을-수정해-보자">config 파일을 수정해 보자.</h3>
+
+<p>로컬 서버를 띄우는 데 성공했다면 이제 꾸미는 일만 남았다. 우리가 사용한 지킬 블로그 템플릿은 다양한 기능을 제공하므로 하나씩 알아보도록 하자.</p>
+
+<p>가장 먼저 <code class="language-plaintext highlighter-rouge">_config.yml</code> 파일을 수정하여 블로그의 기본적인 틀을 잡아보자.</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 블로그 배경 색을 정할 수 있습니다.</span>
+<span class="na">minimal_mistakes_skin    </span><span class="pi">:</span> <span class="s2">"</span><span class="s">dirt"</span> <span class="c1"># "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"</span>
+
+<span class="c1"># Site Settings</span>
+<span class="na">locale                   </span><span class="pi">:</span> <span class="s2">"</span><span class="s">ko-KR"</span> <span class="c1"># 언어 설정 바꾸기</span>
+<span class="na">title                    </span><span class="pi">:</span> <span class="s2">"</span><span class="s">minthing's</span><span class="nv"> </span><span class="s">blog"</span> <span class="c1"># 블로그 타이틀</span>
+<span class="na">title_separator          </span><span class="pi">:</span> <span class="s2">"</span><span class="s">-"</span>
+<span class="na">subtitle                 </span><span class="pi">:</span> <span class="c1"># site tagline that appears below site title in masthead</span>
+<span class="na">name                     </span><span class="pi">:</span> <span class="s2">"</span><span class="s">minthing"</span> <span class="c1"># 블로그에서 사용되는 이름</span>
+<span class="na">description              </span><span class="pi">:</span> <span class="s2">"</span><span class="s">내가</span><span class="nv"> </span><span class="s">하는</span><span class="nv"> </span><span class="s">일이</span><span class="nv"> </span><span class="s">나를</span><span class="nv"> </span><span class="s">정의한다</span><span class="nv"> </span><span class="s">✨."</span>
+<span class="na">url                      </span><span class="pi">:</span> <span class="s2">"</span><span class="s">https://minthing.github.io"</span>
+<span class="na">baseurl                  </span><span class="pi">:</span> <span class="c1">#/blog</span>
+<span class="na">repository               </span><span class="pi">:</span> <span class="s2">"</span><span class="s">https://github.com/minthing/minthing.github.io"</span>
+
+</code></pre></div></div>
+:ET

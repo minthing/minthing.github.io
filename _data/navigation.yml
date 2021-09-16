@@ -1,7 +1,7 @@
 # main links
 main:
   - title: "👋"
-    url: /about/
+    url: /about/about/
   - title: "🗃"
     url: "/categories/"
   - title: "🏷"

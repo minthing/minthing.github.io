@@ -1,4 +1,127 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://minthing.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://minthing.github.io/" rel="alternate" type="text/html" /><updated>2021-09-16T10:29:42+09:00</updated><id>https://minthing.github.io/feed.xml</id><title type="html">minthing’s blog</title><subtitle>내가 하는 일이 나를 정의한다 ✨.</subtitle><author><name>minthing</name></author><entry><title type="html">깃허브 블로그 만들기 그 험난한 여정 (1) 🛤 - 서버 실행까지의 여정</title><link href="https://minthing.github.io/develop/how-to-make-a-github-blog/" rel="alternate" type="text/html" title="깃허브 블로그 만들기 그 험난한 여정 (1) 🛤 - 서버 실행까지의 여정" /><published>2021-09-15T00:00:00+09:00</published><updated>2021-09-15T00:00:00+09:00</updated><id>https://minthing.github.io/develop/how-to-make-a-github-blog</id><content type="html" xml:base="https://minthing.github.io/develop/how-to-make-a-github-blog/">&lt;p&gt;예전 windows를 썼을 때 부터 깃허브 블로그는 나에게 애증의 존재였다.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://minthing.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://minthing.github.io/" rel="alternate" type="text/html" /><updated>2021-09-16T21:55:38+09:00</updated><id>https://minthing.github.io/feed.xml</id><title type="html">minthing’s blog</title><subtitle>내가 하는 일이 나를 정의한다 ✨.</subtitle><author><name>minthing</name></author><entry><title type="html">👋 hello, i’m minthing</title><link href="https://minthing.github.io/about/about/" rel="alternate" type="text/html" title="👋 hello, i’m minthing" /><published>2021-09-16T00:00:00+09:00</published><updated>2021-09-16T00:00:00+09:00</updated><id>https://minthing.github.io/about/about</id><content type="html" xml:base="https://minthing.github.io/about/about/">&lt;h3 id=&quot;test&quot;&gt;test&lt;/h3&gt;</content><author><name>minthing</name></author><category term="about" /><category term="about" /><summary type="html">test</summary></entry><entry><title type="html">interactive web - scroll 기초</title><link href="https://minthing.github.io/frontend/interactive-scroll-elementary/" rel="alternate" type="text/html" title="interactive web - scroll 기초" /><published>2021-09-16T00:00:00+09:00</published><updated>2021-09-16T00:00:00+09:00</updated><id>https://minthing.github.io/frontend/interactive-scroll-elementary</id><content type="html" xml:base="https://minthing.github.io/frontend/interactive-scroll-elementary/">&lt;h5 id=&quot;interactive-web--scroll&quot;&gt;interactive web : scroll&lt;/h5&gt;
+
+&lt;p&gt;&lt;strong&gt;pageOffsetY&lt;/strong&gt;&lt;/p&gt;</content><author><name>minthing</name></author><category term="frontend" /><category term="interactive" /><summary type="html">interactive web : scroll</summary></entry><entry><title type="html">깃허브 블로그 만들기 그 험난한 여정 (2) 🛤 - 커스터마이징 및 포스팅 하기</title><link href="https://minthing.github.io/howto/how-to-make-a-github-blog-two/" rel="alternate" type="text/html" title="깃허브 블로그 만들기 그 험난한 여정 (2) 🛤 - 커스터마이징 및 포스팅 하기" /><published>2021-09-16T00:00:00+09:00</published><updated>2021-09-16T00:00:00+09:00</updated><id>https://minthing.github.io/howto/how-to-make-a-github-blog-two</id><content type="html" xml:base="https://minthing.github.io/howto/how-to-make-a-github-blog-two/">&lt;h3 id=&quot;config-파일을-수정해-보자&quot;&gt;config 파일을 수정해 보자.&lt;/h3&gt;
+
+&lt;p&gt;로컬 서버를 띄우는 데 성공했다면 이제 꾸미는 일만 남았다. 우리가 사용한 지킬 블로그 템플릿은 다양한 기능을 제공하므로 하나씩 알아보도록 하자.&lt;/p&gt;
+
+&lt;p&gt;가장 먼저 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; 파일을 수정하여 블로그의 기본적인 틀을 잡아보자.&lt;/p&gt;
+
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# 블로그 배경 색을 정할 수 있습니다.&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;minimal_mistakes_skin    &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;dirt&quot;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# &quot;air&quot;, &quot;aqua&quot;, &quot;contrast&quot;, &quot;dark&quot;, &quot;dirt&quot;, &quot;neon&quot;, &quot;mint&quot;, &quot;plum&quot;, &quot;sunrise&quot;&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# Site Settings&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;locale                   &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;ko-KR&quot;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 언어 설정 바꾸기&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;title                    &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;minthing's&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;blog&quot;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 블로그 타이틀&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;title_separator          &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;-&quot;&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;subtitle                 &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# site tagline that appears below site title in masthead&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;name                     &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;minthing&quot;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 블로그에서 사용되는 이름&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;description              &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;내가&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;하는&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;일이&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;나를&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;정의한다&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;✨.&quot;&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;url                      &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;https://minthing.github.io&quot;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 블로그 url&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;baseurl                  &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#/blog&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;repository               &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;https://github.com/minthing/minthing.github.io&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;좀 더 하단으로 가시면 작성자 정보를 기입할 수 있습니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;author&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;name             &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;minthing&quot;&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;avatar           &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;/assets/images/avatar.jpeg&quot;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 내 캐릭터&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;bio              &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;💻&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;📖&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;✍️&quot;&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;location         &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;korea&quot;&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;email            &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;links&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Email&quot;&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;icon&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;fas&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;fa-fw&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;fa-envelope-square&quot;&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;#url: &quot;&quot;&lt;/span&gt;
+    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Website&quot;&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;icon&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;fas&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;fa-fw&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;fa-link&quot;&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;mber.tistory.com&quot;&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# - label: &quot;Twitter&quot;&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;#   icon: &quot;fab fa-fw fa-twitter-square&quot;&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;#   # url: &quot;https://twitter.com/&quot;&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# - label: &quot;Facebook&quot;&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;#   icon: &quot;fab fa-fw fa-facebook-square&quot;&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;#   # url: &quot;https://facebook.com/&quot;&lt;/span&gt;
+    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;GitHub&quot;&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;icon&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;fab&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;fa-fw&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;fa-github&quot;&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;https://github.com/minthing&quot;&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# - label: &quot;Instagram&quot;&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;#   icon: &quot;fab fa-fw fa-instagram&quot;&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;#   # url: &quot;https://instagram.com/&quot;&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;그 다음 카테고리를 지정해 줄 겁니다. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_data/navigation.yml&lt;/code&gt;을 수정해 줍니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# main links&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;👋&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/about/about/&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;🗃&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;/categories/&quot;&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;🏷&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/tags/&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;이제 나머지는 css 등 자기가 원하는 대로 커스터마이징 해주면 됩니다! 로컬 환경에서 블로그를 열어 테스트 한 후 배포하면 됩니다. ✨&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;test/_pages&lt;/code&gt; 또는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;test/_posts&lt;/code&gt;등을 참고하시면 도움이 될 겁니다.&lt;/p&gt;</content><author><name>minthing</name></author><category term="howto" /><category term="jykll" /><category term="blog" /><summary type="html">config 파일을 수정해 보자.</summary></entry><entry><title type="html">📖 생명의 차창에서, 호시노 겐, 에세이</title><link href="https://minthing.github.io/review/hoshino-gen/" rel="alternate" type="text/html" title="📖 생명의 차창에서, 호시노 겐, 에세이" /><published>2021-09-16T00:00:00+09:00</published><updated>2021-09-16T00:00:00+09:00</updated><id>https://minthing.github.io/review/hoshino-gen</id><content type="html" xml:base="https://minthing.github.io/review/hoshino-gen/">&lt;h6 id=&quot;-생명의-차창에서&quot;&gt;📖 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;생명의 차창에서&amp;gt;&lt;/code&gt;&lt;/h6&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/jhOVibLEDhA&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;전체적으로 일본 방송계에 대한 이야기, 자기가 작업한 곡이나 연기한 드라마에 대한 내용이 많아서 절반 이상 무슨 말인지 모르고 대충 “분위기”로 읽었음. 예전에 본 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;도망치는 건 부끄럽지만 도움이 된다&amp;gt;&lt;/code&gt;에 관한 내용 말고는 하나도 못 알아들었지만 작가 특유의 덤덤한 분위기가 마음에 들어서 어느새 끝까지 읽었다.&lt;/p&gt;
+
+&lt;p&gt;책도 쓰고 드라마도 출연하고 곡도 쓰고 얼굴만 봐서는 소극적인 아티스트 느낌이었는데 참 바쁘게 살았다. 소극적인 것과 게으른 건 다른거구나, 느꼈다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;깊은 밤에 대한 이야기&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;작사도 작곡도 에세이를 쓰는 일도 아이디어를 다듬는 것도 대사를 외우는 일도 어쩐지 밤이 깊으면 ‘이 작업은 틀림없이 미래로 이어진다!’ 라는 묘한 예감과 함께 몰두할 수 있다. 실제로는 낮이든 밤이든 아침이든 제작 속도는 일정하다. 할 수 있을 때는 하고, 할 수 없을 때는 하지 못한다. 다만 기분 좋게 작업할 수 있다. 그 뿐이다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;혼자가 아니라는 것&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;있는 그대로의 나를 인정하지 못하고 꾸미지 않고는 못 배겼다. 누군가에게 무시당하기 전에 자기가 먼저 깎아내리고 “알고 있다고요.” 라며 상처받지 않게 미리 연막을 쳤다. 한심하다. 저런 태도로 살면 실제로 그보다 행복한 인생이 없더라도 평생 행복을 느끼지 못할텐데. &lt;br /&gt; 지금은 전혀 그런 생각을 하지 않는다 &lt;br /&gt; &lt;strong&gt;행복하면서도 더 갈구할 수 있는 사람이 진짜다.&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://pbs.twimg.com/media/EU-rLexXsAAJa-4.png&quot; alt=&quot;hoshino-gen&quot; /&gt;&lt;/p&gt;</content><author><name>minthing</name></author><category term="review" /><category term="book" /><category term="review" /><summary type="html">📖 &amp;lt;생명의 차창에서&amp;gt;</summary></entry><entry><title type="html">weekly i did : 20210916 ~ 20210919</title><link href="https://minthing.github.io/wid/wid-one/" rel="alternate" type="text/html" title="weekly i did : 20210916 ~ 20210919" /><published>2021-09-16T00:00:00+09:00</published><updated>2021-09-16T00:00:00+09:00</updated><id>https://minthing.github.io/wid/wid-one</id><content type="html" xml:base="https://minthing.github.io/wid/wid-one/">&lt;h4 id=&quot;20210916-️&quot;&gt;20210916 🌧️&lt;/h4&gt;
+
+&lt;p&gt;매일 새로운 것을 배우기는 어렵지만 매일 무언가 한 가지, 조금씩 성장해 가는 것은 가능할 것이다.&lt;/p&gt;
+
+&lt;p&gt;처음부터 완벽한 사람은 없다. 완벽한 작품, 내 생에 결코 비슷한 것을 만들 수 없을 것 같은 멋진 것을 만들어 내는 사람의 첫 작을 아는 경우가 몇이나 있을까.&lt;/p&gt;
+
+&lt;p&gt;계속 하다보면 성장할 것이다. 이게 내 마지막이 아니니까 괜찮다. 내가 지금 해야 할 것은 섵부른 포기가 아니라 지금 눈 앞에 있는 것을 똑바로 보고 매일, 조금씩이라도, 멈추지 않고, 성실히, 차근차근 해결해 나가는 것이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;develop&lt;/strong&gt;&lt;/p&gt;
+&lt;ul class=&quot;task-list&quot;&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;개발 블로그 업로드 - github blog 만든 여정 (1) 업로드&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;interactive web dev 공부&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;pro 맥북 안드로이드 스튜디오 설치&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;side project&lt;/strong&gt;&lt;/p&gt;
+&lt;ul class=&quot;task-list&quot;&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;창의력을 길러주는 작품 읽기
+    &lt;ul&gt;
+      &lt;li&gt;&amp;lt;물감을 사야 해서, 퇴사는 잠시 미뤘습니다&amp;gt; : 45%&lt;/li&gt;
+      &lt;li&gt;젊은 ADHD의 슬픔 : 5%&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;글 1만자 작성&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;오늘 찾은 좋은 문장&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;타자를 안다고 말하지 않고, 타자의 고통을 느낄 수 있다고 자신하지 않고, 타자와의 만남을 섣불리 도모하지 않는 시가 그렇지 않은 시보다 아름다움에 도달할 가능성이 더 높다. 서정시는 가장 왜소할 때 가장 거대하고, 가장 무력할 때 가장 위대하다. &lt;br /&gt; 진실에 대해서는 응답을 해야 하고, 타인의 슬픔에는 예의를 갖추어야 한다.&lt;/p&gt;
+&lt;/blockquote&gt;</content><author><name>minthing</name></author><category term="wid" /><category term="daily" /><summary type="html">20210916 🌧️</summary></entry><entry><title type="html">깃허브 블로그 만들기 그 험난한 여정 (1) 🛤 - 서버 실행까지의 여정</title><link href="https://minthing.github.io/howto/how-to-make-a-github-blog-first/" rel="alternate" type="text/html" title="깃허브 블로그 만들기 그 험난한 여정 (1) 🛤 - 서버 실행까지의 여정" /><published>2021-09-15T00:00:00+09:00</published><updated>2021-09-15T00:00:00+09:00</updated><id>https://minthing.github.io/howto/how-to-make-a-github-blog-first</id><content type="html" xml:base="https://minthing.github.io/howto/how-to-make-a-github-blog-first/">&lt;p&gt;예전 windows를 썼을 때 부터 깃허브 블로그는 나에게 애증의 존재였다.
 그 때는 지금보다 개발 실력이 없는 진짜 뉴비중의 뉴비여서 에러 해결 방법도 구글 검색 방법도 몰라서 결국 로컬 서버 확인 없이 일단 서버에 띄우고 확인한다는 미친 짓을 벌이기도 했다. 🙃&lt;/p&gt;
 
 &lt;p&gt;하지만 왜 나는 기업에서 잘만 관리해주고 코드 에디터도 잘만 달려 있고 광고까지 달 수 있는
@@ -25,7 +148,7 @@
 
 &lt;h2 id=&quot;기본적인-지킬-블로그-생성-방법&quot;&gt;기본적인 지킬 블로그 생성 방법&lt;/h2&gt;
 
-&lt;p&gt;먼저 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.github.io&lt;/code&gt;라는 타이틀을 가진 레파지토리를 생성해야 한다.&lt;/p&gt;
+&lt;p&gt;먼저 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;사용자아이디.github.io&lt;/code&gt;라는 타이틀을 가진 레파지토리를 생성해야 한다.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/54466684/133532161-0bb4070a-5076-4c03-9af5-fb21a423a9e8.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
 
@@ -168,4 +291,4 @@ ERROR: While executing gem ... (Gem::FilePermissionError) You don't have write p
 
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bundle install
 bundle update
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>minthing</name></author><category term="develop" /><category term="github page" /><category term="jykll" /><category term="blog" /><category term="ruby" /><category term="brew" /><summary type="html">예전 windows를 썼을 때 부터 깃허브 블로그는 나에게 애증의 존재였다. 그 때는 지금보다 개발 실력이 없는 진짜 뉴비중의 뉴비여서 에러 해결 방법도 구글 검색 방법도 몰라서 결국 로컬 서버 확인 없이 일단 서버에 띄우고 확인한다는 미친 짓을 벌이기도 했다. 🙃</summary></entry></feed>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>minthing</name></author><category term="howto" /><category term="jykll" /><category term="blog" /><summary type="html">예전 windows를 썼을 때 부터 깃허브 블로그는 나에게 애증의 존재였다. 그 때는 지금보다 개발 실력이 없는 진짜 뉴비중의 뉴비여서 에러 해결 방법도 구글 검색 방법도 몰라서 결국 로컬 서버 확인 없이 일단 서버에 띄우고 확인한다는 미친 짓을 벌이기도 했다. 🙃</summary></entry></feed>

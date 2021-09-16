@@ -1,0 +1,17 @@
+I"�<h4 id="2021년-9월-16일">2021년 9월 16일.</h4>
+
+<p>매일 새로운 것을 배우기는 어렵지만 매일 무언가 한 가지, 조금씩 성장해 가는 것은 가능할 것이다.</p>
+
+<p><strong>develop</strong></p>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />개발 블로그 업로드 - github blog 만든 여정 (1) 업로드</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />interactive web dev 공부</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />xcode로 flutter 실행하기</li>
+</ul>
+
+<p><strong>side project</strong></p>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />창의력을 길러주는 작품 읽기 - 판타지 소설 <code class="language-plaintext highlighter-rouge">&lt;문과라도 안 죄송한 세계로 감&gt;</code> 읽고 문장력 기르기</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />글 1만자 작성</li>
+</ul>
+:ET

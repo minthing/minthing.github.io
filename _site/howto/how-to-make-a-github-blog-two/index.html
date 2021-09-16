@@ -1,0 +1,675 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>깃허브 블로그 만들기 그 험난한 여정 (2) 🛤 - 커스터마이징 및 포스팅 하기 - minthing’s blog</title>
+<meta name="description" content="config 파일을 수정해 보자.">
+
+
+  <meta name="author" content="minthing">
+  
+  <meta property="article:author" content="minthing">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="minthing's blog">
+<meta property="og:title" content="깃허브 블로그 만들기 그 험난한 여정 (2) 🛤 - 커스터마이징 및 포스팅 하기">
+<meta property="og:url" content="https://minthing.github.io/howto/how-to-make-a-github-blog-two/">
+
+
+  <meta property="og:description" content="config 파일을 수정해 보자.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2021-09-16T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://minthing.github.io/howto/how-to-make-a-github-blog-two/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "minthing",
+      "url": "https://minthing.github.io/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="minthing's blog Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          minthing's blog
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/about/">👋</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">🗃</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">🏷</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="https://minthing.github.io/">
+        <img src="/assets/images/avatar.jpeg" alt="minthing" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="https://minthing.github.io/" itemprop="url">minthing</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>💻 &amp; 📖 &amp; ✍️</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="minjeongandk@gmail.com" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+            <li><a href="mber.tistory.com" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Website</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/minthing" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="깃허브 블로그 만들기 그 험난한 여정 (2) 🛤 - 커스터마이징 및 포스팅 하기">
+    <meta itemprop="description" content="config 파일을 수정해 보자.">
+    <meta itemprop="datePublished" content="2021-09-16T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="https://minthing.github.io/howto/how-to-make-a-github-blog-two/" class="u-url" itemprop="url">깃허브 블로그 만들기 그 험난한 여정 (2) 🛤 - 커스터마이징 및 포스팅 하기
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <h3 id="config-파일을-수정해-보자">config 파일을 수정해 보자.</h3>
+
+<p>로컬 서버를 띄우는 데 성공했다면 이제 꾸미는 일만 남았다. 우리가 사용한 지킬 블로그 템플릿은 다양한 기능을 제공하므로 하나씩 알아보도록 하자.</p>
+
+<p>가장 먼저 <code class="language-plaintext highlighter-rouge">_config.yml</code> 파일을 수정하여 블로그의 기본적인 틀을 잡아보자.</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 블로그 배경 색을 정할 수 있습니다.</span>
+<span class="na">minimal_mistakes_skin    </span><span class="pi">:</span> <span class="s2">"</span><span class="s">dirt"</span> <span class="c1"># "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"</span>
+
+<span class="c1"># Site Settings</span>
+<span class="na">locale                   </span><span class="pi">:</span> <span class="s2">"</span><span class="s">ko-KR"</span> <span class="c1"># 언어 설정 바꾸기</span>
+<span class="na">title                    </span><span class="pi">:</span> <span class="s2">"</span><span class="s">minthing's</span><span class="nv"> </span><span class="s">blog"</span> <span class="c1"># 블로그 타이틀</span>
+<span class="na">title_separator          </span><span class="pi">:</span> <span class="s2">"</span><span class="s">-"</span>
+<span class="na">subtitle                 </span><span class="pi">:</span> <span class="c1"># site tagline that appears below site title in masthead</span>
+<span class="na">name                     </span><span class="pi">:</span> <span class="s2">"</span><span class="s">minthing"</span> <span class="c1"># 블로그에서 사용되는 이름</span>
+<span class="na">description              </span><span class="pi">:</span> <span class="s2">"</span><span class="s">내가</span><span class="nv"> </span><span class="s">하는</span><span class="nv"> </span><span class="s">일이</span><span class="nv"> </span><span class="s">나를</span><span class="nv"> </span><span class="s">정의한다</span><span class="nv"> </span><span class="s">✨."</span>
+<span class="na">url                      </span><span class="pi">:</span> <span class="s2">"</span><span class="s">https://minthing.github.io"</span> <span class="c1"># 블로그 url</span>
+<span class="na">baseurl                  </span><span class="pi">:</span> <span class="c1">#/blog</span>
+<span class="na">repository               </span><span class="pi">:</span> <span class="s2">"</span><span class="s">https://github.com/minthing/minthing.github.io"</span>
+</code></pre></div></div>
+
+<p>좀 더 하단으로 가시면 작성자 정보를 기입할 수 있습니다.</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">author</span><span class="pi">:</span>
+  <span class="na">name             </span><span class="pi">:</span> <span class="s2">"</span><span class="s">minthing"</span>
+  <span class="na">avatar           </span><span class="pi">:</span> <span class="s2">"</span><span class="s">/assets/images/avatar.jpeg"</span> <span class="c1"># 내 캐릭터</span>
+  <span class="na">bio              </span><span class="pi">:</span> <span class="s2">"</span><span class="s">💻</span><span class="nv"> </span><span class="s">&amp;</span><span class="nv"> </span><span class="s">📖</span><span class="nv"> </span><span class="s">&amp;</span><span class="nv"> </span><span class="s">✍️"</span>
+  <span class="na">location         </span><span class="pi">:</span> <span class="s2">"</span><span class="s">korea"</span>
+  <span class="na">email            </span><span class="pi">:</span>
+  <span class="na">links</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">label</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Email"</span>
+      <span class="na">icon</span><span class="pi">:</span> <span class="s2">"</span><span class="s">fas</span><span class="nv"> </span><span class="s">fa-fw</span><span class="nv"> </span><span class="s">fa-envelope-square"</span>
+      <span class="c1">#url: ""</span>
+    <span class="pi">-</span> <span class="na">label</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Website"</span>
+      <span class="na">icon</span><span class="pi">:</span> <span class="s2">"</span><span class="s">fas</span><span class="nv"> </span><span class="s">fa-fw</span><span class="nv"> </span><span class="s">fa-link"</span>
+      <span class="na">url</span><span class="pi">:</span> <span class="s2">"</span><span class="s">mber.tistory.com"</span>
+    <span class="c1"># - label: "Twitter"</span>
+    <span class="c1">#   icon: "fab fa-fw fa-twitter-square"</span>
+    <span class="c1">#   # url: "https://twitter.com/"</span>
+    <span class="c1"># - label: "Facebook"</span>
+    <span class="c1">#   icon: "fab fa-fw fa-facebook-square"</span>
+    <span class="c1">#   # url: "https://facebook.com/"</span>
+    <span class="pi">-</span> <span class="na">label</span><span class="pi">:</span> <span class="s2">"</span><span class="s">GitHub"</span>
+      <span class="na">icon</span><span class="pi">:</span> <span class="s2">"</span><span class="s">fab</span><span class="nv"> </span><span class="s">fa-fw</span><span class="nv"> </span><span class="s">fa-github"</span>
+      <span class="na">url</span><span class="pi">:</span> <span class="s2">"</span><span class="s">https://github.com/minthing"</span>
+    <span class="c1"># - label: "Instagram"</span>
+    <span class="c1">#   icon: "fab fa-fw fa-instagram"</span>
+    <span class="c1">#   # url: "https://instagram.com/"</span>
+
+</code></pre></div></div>
+
+<p>그 다음 카테고리를 지정해 줄 겁니다. <code class="language-plaintext highlighter-rouge">_data/navigation.yml</code>을 수정해 줍니다.</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># main links</span>
+<span class="na">main</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">👋"</span>
+    <span class="na">url</span><span class="pi">:</span> <span class="s">/about/about/</span>
+  <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">🗃"</span>
+    <span class="na">url</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/categories/"</span>
+  <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">🏷"</span>
+    <span class="na">url</span><span class="pi">:</span> <span class="s">/tags/</span>
+</code></pre></div></div>
+
+<p>이제 나머지는 css 등 자기가 원하는 대로 커스터마이징 해주면 됩니다! 로컬 환경에서 블로그를 열어 테스트 한 후 배포하면 됩니다. ✨</p>
+
+<p><code class="language-plaintext highlighter-rouge">test/_pages</code> 또는 <code class="language-plaintext highlighter-rouge">test/_posts</code>등을 참고하시면 도움이 될 겁니다.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#blog" class="page__taxonomy-item p-category" rel="tag">blog</a><span class="sep">, </span>
+    
+      <a href="/tags/#jykll" class="page__taxonomy-item p-category" rel="tag">jykll</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#howto" class="page__taxonomy-item p-category" rel="tag">howto</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2021-09-16T00:00:00+09:00">September 16, 2021</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%EA%B9%83%ED%97%88%EB%B8%8C+%EB%B8%94%EB%A1%9C%EA%B7%B8+%EB%A7%8C%EB%93%A4%EA%B8%B0+%EA%B7%B8+%ED%97%98%EB%82%9C%ED%95%9C+%EC%97%AC%EC%A0%95+%282%29+%F0%9F%9B%A4+-+%EC%BB%A4%EC%8A%A4%ED%84%B0%EB%A7%88%EC%9D%B4%EC%A7%95+%EB%B0%8F+%ED%8F%AC%EC%8A%A4%ED%8C%85+%ED%95%98%EA%B8%B0%20https%3A%2F%2Fminthing.github.io%2Fhowto%2Fhow-to-make-a-github-blog-two%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fminthing.github.io%2Fhowto%2Fhow-to-make-a-github-blog-two%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fminthing.github.io%2Fhowto%2Fhow-to-make-a-github-blog-two%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/frontend/interactive-scroll-elementary/" class="pagination--pager" title="interactive web - scroll 기초
+">이전</a>
+    
+    
+      <a href="/review/hoshino-gen/" class="pagination--pager" title="📖 생명의 차창에서, 호시노 겐, 에세이
+">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/wid/wid-one/" rel="permalink">weekly i did : 20210916 ~ 20210919
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">20210916 🌧️
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/review/hoshino-gen/" rel="permalink">📖 생명의 차창에서, 호시노 겐, 에세이
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">📖 &lt;생명의 차창에서&gt;
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/frontend/interactive-scroll-elementary/" rel="permalink">interactive web - scroll 기초
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">interactive web : scroll
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/about/about/" rel="permalink">👋 hello, i’m minthing
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">test
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 minthing. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
