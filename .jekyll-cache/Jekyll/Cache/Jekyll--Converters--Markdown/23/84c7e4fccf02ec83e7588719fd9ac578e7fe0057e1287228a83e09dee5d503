@@ -1,0 +1,11 @@
+I"�<h3 id="swift-기초">swift 기초</h3>
+
+<ul>
+  <li>명명법 : camelCase</li>
+  <li>console에 프린트 하는 법
+    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">print</span> <span class="c1">//우리가 아는 그 print</span>
+<span class="n">dump</span> <span class="c1">// 인스턴스에 대한 자세한 설명까지 print </span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+:ET

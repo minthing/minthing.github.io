@@ -1,4 +1,88 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://minthing.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://minthing.github.io/" rel="alternate" type="text/html" /><updated>2021-09-16T21:55:38+09:00</updated><id>https://minthing.github.io/feed.xml</id><title type="html">minthing’s blog</title><subtitle>내가 하는 일이 나를 정의한다 ✨.</subtitle><author><name>minthing</name></author><entry><title type="html">👋 hello, i’m minthing</title><link href="https://minthing.github.io/about/about/" rel="alternate" type="text/html" title="👋 hello, i’m minthing" /><published>2021-09-16T00:00:00+09:00</published><updated>2021-09-16T00:00:00+09:00</updated><id>https://minthing.github.io/about/about</id><content type="html" xml:base="https://minthing.github.io/about/about/">&lt;h3 id=&quot;test&quot;&gt;test&lt;/h3&gt;</content><author><name>minthing</name></author><category term="about" /><category term="about" /><summary type="html">test</summary></entry><entry><title type="html">interactive web - scroll 기초</title><link href="https://minthing.github.io/frontend/interactive-scroll-elementary/" rel="alternate" type="text/html" title="interactive web - scroll 기초" /><published>2021-09-16T00:00:00+09:00</published><updated>2021-09-16T00:00:00+09:00</updated><id>https://minthing.github.io/frontend/interactive-scroll-elementary</id><content type="html" xml:base="https://minthing.github.io/frontend/interactive-scroll-elementary/">&lt;h5 id=&quot;interactive-web--scroll&quot;&gt;interactive web : scroll&lt;/h5&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://minthing.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://minthing.github.io/" rel="alternate" type="text/html" /><updated>2021-10-02T17:49:48+09:00</updated><id>https://minthing.github.io/feed.xml</id><title type="html">minthing’s blog</title><subtitle>내가 하는 일이 나를 정의한다 ✨.</subtitle><author><name>minthing</name></author><entry><title type="html">📖 어린이라는 세계, 에세이</title><link href="https://minthing.github.io/review/the-world-of-children/" rel="alternate" type="text/html" title="📖 어린이라는 세계, 에세이" /><published>2021-10-02T00:00:00+09:00</published><updated>2021-10-02T00:00:00+09:00</updated><id>https://minthing.github.io/review/the-world-of-children</id><content type="html" xml:base="https://minthing.github.io/review/the-world-of-children/">&lt;h6 id=&quot;-어린이라는-세계&quot;&gt;📖 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;어린이라는 세계&amp;gt;&lt;/code&gt;&lt;/h6&gt;
+
+&lt;p&gt;저자가 어린이에게 보여주는 따뜻한 세계를 엿볼 수 있다. 초반보다 후반부 내용이 더 마음에 남았던 것 같다. 어린 시절에 상처를 입었던 사람들이라면 공감할 내용이 많았다. 책 속에서도 종종 글쓴이가 독자에게서 듣는다고 언급한 말이지만, 왜 내가 어렸을 때 저런 어른을 만나지 못할걸까라는 생각을 읽는 내내 조금씩 했다.&lt;/p&gt;
+
+&lt;p&gt;어린 시절 별로 좋은 기억이 없어서 그런가, 내가 그런 취급을 받지 않아도 좋았다고 부당한 일이었다고 굳이 누가 말해주지 않아도 책을 읽으면 알게 되어서 화도 나고 슬프면서도 조금 위로가 되었다.&lt;/p&gt;
+
+&lt;p&gt;각박한 세상 속에서, 조금 더 다른 사람에게, 나아가 어린이에게 친절한 어른으로 남고 싶다. 그 애들도 언젠가 자라서 어른이 될 테니까.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;삶을 선택한다는 것&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;기사에 달린 댓글에는 어린이가 ‘피어 보지도 못했다’는 표현이 있었다. 글을 쓴 분의 안타까워 하는 마음은 이해하지만, 나는 틀린 비유라고 생각한다. 내가 아는 삶은 그런 게 아니다. 삶의 순간순간은 새싹이 나고 봉우리가 맺히고 꽃이 피고 시드는 식으로 진행되지 않는다. 지나고보면 그런 단계를 가졌을지는 몰라도, 살아있는 한 모든 순간은 똑같은 가치를 가진다.&lt;/p&gt;
+&lt;/blockquote&gt;</content><author><name>minthing</name></author><category term="review" /><category term="book" /><category term="review" /><summary type="html">📖 &amp;lt;어린이라는 세계&amp;gt;</summary></entry><entry><title type="html">swift 기초 : day 1</title><link href="https://minthing.github.io/swift/swift-day1/" rel="alternate" type="text/html" title="swift 기초 : day 1" /><published>2021-09-17T00:00:00+09:00</published><updated>2021-09-17T00:00:00+09:00</updated><id>https://minthing.github.io/swift/swift-day1</id><content type="html" xml:base="https://minthing.github.io/swift/swift-day1/">&lt;h3 id=&quot;swift-기초&quot;&gt;swift 기초&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;명명법 : camelCase&lt;/li&gt;
+  &lt;li&gt;console에 프린트 하는 법
+    &lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//우리가 아는 그 print&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;dump&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 인스턴스에 대한 자세한 설명까지 print &lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>minthing</name></author><category term="swift" /><category term="swift" /><summary type="html">swift 기초</summary></entry><entry><title type="html">flutter 기초 : day 1</title><link href="https://minthing.github.io/flutter/flutter-day1/" rel="alternate" type="text/html" title="flutter 기초 : day 1" /><published>2021-09-17T00:00:00+09:00</published><updated>2021-09-17T00:00:00+09:00</updated><id>https://minthing.github.io/flutter/flutter-day1</id><content type="html" xml:base="https://minthing.github.io/flutter/flutter-day1/">&lt;h5 id=&quot;widget&quot;&gt;widget&lt;/h5&gt;
+
+&lt;p&gt;기본 디자인 요소를 widget이라고 함. flutter는 위젯이 쌓여 앱을 만듬.&lt;/p&gt;
+
+&lt;h5 id=&quot;기본적인-앱-구성해보기&quot;&gt;기본적인 앱 구성해보기&lt;/h5&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/54466684/133742750-88479283-ca88-486d-b13e-3d874660eed9.png&quot; width=&quot;30%&quot; height=&quot;30%&quot; style=&quot;display:block;margin:0 auto&quot; /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-dart highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nl&quot;&gt;children:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Widget&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;[&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;Text&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;hello world&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// text&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;Icon&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Icons&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// add button&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;Container&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 한 개의 자식을 갖는 레이아웃 위젯입니다.&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;child:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Text&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;i'm not container&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;color:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Colors&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;redAccent&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,),&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;TextButton&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;onPressed:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(){&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// press 시 function&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text button pressed&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;},&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;child:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Text&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text button!!&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;],&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>minthing</name></author><category term="flutter" /><category term="flutter" /><summary type="html">widget</summary></entry><entry><title type="html">weekly i did : 20210916 ~ 20210919</title><link href="https://minthing.github.io/wid/wid-one/" rel="alternate" type="text/html" title="weekly i did : 20210916 ~ 20210919" /><published>2021-09-16T00:00:00+09:00</published><updated>2021-09-16T00:00:00+09:00</updated><id>https://minthing.github.io/wid/wid-one</id><content type="html" xml:base="https://minthing.github.io/wid/wid-one/">&lt;h4 id=&quot;20210916-️&quot;&gt;20210916 🌧️&lt;/h4&gt;
+
+&lt;p&gt;매일 새로운 것을 배우기는 어렵지만 매일 무언가 한 가지, 조금씩 성장해 가는 것은 가능할 것이다.&lt;/p&gt;
+
+&lt;p&gt;처음부터 완벽한 사람은 없다. 완벽한 작품, 내 생에 결코 비슷한 것을 만들 수 없을 것 같은 멋진 것을 만들어 내는 사람의 첫 작을 아는 경우가 몇이나 있을까.&lt;/p&gt;
+
+&lt;p&gt;계속 하다보면 성장할 것이다. 이게 내 마지막이 아니니까 괜찮다. 내가 지금 해야 할 것은 섵부른 포기가 아니라 지금 눈 앞에 있는 것을 똑바로 보고 매일, 조금씩이라도, 멈추지 않고, 성실히, 차근차근 해결해 나가는 것이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;develop&lt;/strong&gt;&lt;/p&gt;
+&lt;ul class=&quot;task-list&quot;&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;개발 블로그 업로드 - github blog 만든 여정 (1) 업로드&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;interactive web dev 공부&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;pro 맥북 안드로이드 스튜디오 설치&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;side project&lt;/strong&gt;&lt;/p&gt;
+&lt;ul class=&quot;task-list&quot;&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;창의력을 길러주는 작품 읽기
+    &lt;ul&gt;
+      &lt;li&gt;&amp;lt;물감을 사야 해서, 퇴사는 잠시 미뤘습니다&amp;gt; : 45%&lt;/li&gt;
+      &lt;li&gt;젊은 ADHD의 슬픔 : 5%&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;글 1만자 작성&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;오늘 찾은 좋은 문장&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;타자를 안다고 말하지 않고, 타자의 고통을 느낄 수 있다고 자신하지 않고, 타자와의 만남을 섣불리 도모하지 않는 시가 그렇지 않은 시보다 아름다움에 도달할 가능성이 더 높다. 서정시는 가장 왜소할 때 가장 거대하고, 가장 무력할 때 가장 위대하다. &lt;br /&gt; 진실에 대해서는 응답을 해야 하고, 타인의 슬픔에는 예의를 갖추어야 한다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&quot;20210917&quot;&gt;20210917&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;develop&lt;/strong&gt;&lt;/p&gt;
+&lt;ul class=&quot;task-list&quot;&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;개발 블로그 업로드 - github blog 만든 여정 (2) 업로드&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;swift ios 앱 제작 공부&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;side project&lt;/strong&gt;&lt;/p&gt;
+&lt;ul class=&quot;task-list&quot;&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;창의력을 길러주는 작품 읽기&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;글 1만자 작성&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>minthing</name></author><category term="wid" /><category term="daily" /><summary type="html">20210916 🌧️</summary></entry><entry><title type="html">👋 hello, i’m minthing</title><link href="https://minthing.github.io/about/about/" rel="alternate" type="text/html" title="👋 hello, i’m minthing" /><published>2021-09-16T00:00:00+09:00</published><updated>2021-09-16T00:00:00+09:00</updated><id>https://minthing.github.io/about/about</id><content type="html" xml:base="https://minthing.github.io/about/about/">&lt;h3 id=&quot;test&quot;&gt;test&lt;/h3&gt;</content><author><name>minthing</name></author><category term="about" /><category term="about" /><summary type="html">test</summary></entry><entry><title type="html">interactive web - scroll 기초</title><link href="https://minthing.github.io/frontend/interactive-scroll-elementary/" rel="alternate" type="text/html" title="interactive web - scroll 기초" /><published>2021-09-16T00:00:00+09:00</published><updated>2021-09-16T00:00:00+09:00</updated><id>https://minthing.github.io/frontend/interactive-scroll-elementary</id><content type="html" xml:base="https://minthing.github.io/frontend/interactive-scroll-elementary/">&lt;h5 id=&quot;interactive-web--scroll&quot;&gt;interactive web : scroll&lt;/h5&gt;
 
 &lt;p&gt;&lt;strong&gt;pageOffsetY&lt;/strong&gt;&lt;/p&gt;</content><author><name>minthing</name></author><category term="frontend" /><category term="interactive" /><summary type="html">interactive web : scroll</summary></entry><entry><title type="html">깃허브 블로그 만들기 그 험난한 여정 (2) 🛤 - 커스터마이징 및 포스팅 하기</title><link href="https://minthing.github.io/howto/how-to-make-a-github-blog-two/" rel="alternate" type="text/html" title="깃허브 블로그 만들기 그 험난한 여정 (2) 🛤 - 커스터마이징 및 포스팅 하기" /><published>2021-09-16T00:00:00+09:00</published><updated>2021-09-16T00:00:00+09:00</updated><id>https://minthing.github.io/howto/how-to-make-a-github-blog-two</id><content type="html" xml:base="https://minthing.github.io/howto/how-to-make-a-github-blog-two/">&lt;h3 id=&quot;config-파일을-수정해-보자&quot;&gt;config 파일을 수정해 보자.&lt;/h3&gt;
 
@@ -91,37 +175,7 @@
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://pbs.twimg.com/media/EU-rLexXsAAJa-4.png&quot; alt=&quot;hoshino-gen&quot; /&gt;&lt;/p&gt;</content><author><name>minthing</name></author><category term="review" /><category term="book" /><category term="review" /><summary type="html">📖 &amp;lt;생명의 차창에서&amp;gt;</summary></entry><entry><title type="html">weekly i did : 20210916 ~ 20210919</title><link href="https://minthing.github.io/wid/wid-one/" rel="alternate" type="text/html" title="weekly i did : 20210916 ~ 20210919" /><published>2021-09-16T00:00:00+09:00</published><updated>2021-09-16T00:00:00+09:00</updated><id>https://minthing.github.io/wid/wid-one</id><content type="html" xml:base="https://minthing.github.io/wid/wid-one/">&lt;h4 id=&quot;20210916-️&quot;&gt;20210916 🌧️&lt;/h4&gt;
-
-&lt;p&gt;매일 새로운 것을 배우기는 어렵지만 매일 무언가 한 가지, 조금씩 성장해 가는 것은 가능할 것이다.&lt;/p&gt;
-
-&lt;p&gt;처음부터 완벽한 사람은 없다. 완벽한 작품, 내 생에 결코 비슷한 것을 만들 수 없을 것 같은 멋진 것을 만들어 내는 사람의 첫 작을 아는 경우가 몇이나 있을까.&lt;/p&gt;
-
-&lt;p&gt;계속 하다보면 성장할 것이다. 이게 내 마지막이 아니니까 괜찮다. 내가 지금 해야 할 것은 섵부른 포기가 아니라 지금 눈 앞에 있는 것을 똑바로 보고 매일, 조금씩이라도, 멈추지 않고, 성실히, 차근차근 해결해 나가는 것이다.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;develop&lt;/strong&gt;&lt;/p&gt;
-&lt;ul class=&quot;task-list&quot;&gt;
-  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;개발 블로그 업로드 - github blog 만든 여정 (1) 업로드&lt;/li&gt;
-  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;interactive web dev 공부&lt;/li&gt;
-  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;pro 맥북 안드로이드 스튜디오 설치&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;side project&lt;/strong&gt;&lt;/p&gt;
-&lt;ul class=&quot;task-list&quot;&gt;
-  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;창의력을 길러주는 작품 읽기
-    &lt;ul&gt;
-      &lt;li&gt;&amp;lt;물감을 사야 해서, 퇴사는 잠시 미뤘습니다&amp;gt; : 45%&lt;/li&gt;
-      &lt;li&gt;젊은 ADHD의 슬픔 : 5%&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;글 1만자 작성&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;오늘 찾은 좋은 문장&lt;/strong&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;타자를 안다고 말하지 않고, 타자의 고통을 느낄 수 있다고 자신하지 않고, 타자와의 만남을 섣불리 도모하지 않는 시가 그렇지 않은 시보다 아름다움에 도달할 가능성이 더 높다. 서정시는 가장 왜소할 때 가장 거대하고, 가장 무력할 때 가장 위대하다. &lt;br /&gt; 진실에 대해서는 응답을 해야 하고, 타인의 슬픔에는 예의를 갖추어야 한다.&lt;/p&gt;
-&lt;/blockquote&gt;</content><author><name>minthing</name></author><category term="wid" /><category term="daily" /><summary type="html">20210916 🌧️</summary></entry><entry><title type="html">깃허브 블로그 만들기 그 험난한 여정 (1) 🛤 - 서버 실행까지의 여정</title><link href="https://minthing.github.io/howto/how-to-make-a-github-blog-first/" rel="alternate" type="text/html" title="깃허브 블로그 만들기 그 험난한 여정 (1) 🛤 - 서버 실행까지의 여정" /><published>2021-09-15T00:00:00+09:00</published><updated>2021-09-15T00:00:00+09:00</updated><id>https://minthing.github.io/howto/how-to-make-a-github-blog-first</id><content type="html" xml:base="https://minthing.github.io/howto/how-to-make-a-github-blog-first/">&lt;p&gt;예전 windows를 썼을 때 부터 깃허브 블로그는 나에게 애증의 존재였다.
+&lt;p&gt;&lt;img src=&quot;https://pbs.twimg.com/media/EU-rLexXsAAJa-4.png&quot; alt=&quot;hoshino-gen&quot; /&gt;&lt;/p&gt;</content><author><name>minthing</name></author><category term="review" /><category term="book" /><category term="review" /><summary type="html">📖 &amp;lt;생명의 차창에서&amp;gt;</summary></entry><entry><title type="html">깃허브 블로그 만들기 그 험난한 여정 (1) 🛤 - 서버 실행까지의 여정</title><link href="https://minthing.github.io/howto/how-to-make-a-github-blog-first/" rel="alternate" type="text/html" title="깃허브 블로그 만들기 그 험난한 여정 (1) 🛤 - 서버 실행까지의 여정" /><published>2021-09-15T00:00:00+09:00</published><updated>2021-09-15T00:00:00+09:00</updated><id>https://minthing.github.io/howto/how-to-make-a-github-blog-first</id><content type="html" xml:base="https://minthing.github.io/howto/how-to-make-a-github-blog-first/">&lt;p&gt;예전 windows를 썼을 때 부터 깃허브 블로그는 나에게 애증의 존재였다.
 그 때는 지금보다 개발 실력이 없는 진짜 뉴비중의 뉴비여서 에러 해결 방법도 구글 검색 방법도 몰라서 결국 로컬 서버 확인 없이 일단 서버에 띄우고 확인한다는 미친 짓을 벌이기도 했다. 🙃&lt;/p&gt;
 
 &lt;p&gt;하지만 왜 나는 기업에서 잘만 관리해주고 코드 에디터도 잘만 달려 있고 광고까지 달 수 있는

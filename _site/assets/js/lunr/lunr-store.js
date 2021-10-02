@@ -34,4 +34,22 @@ var store = [{
         "tags": ["daily"],
         "url": "/wid/wid-one/",
         "teaser": null
+      },{
+        "title": "flutter 기초 : day 1",
+        "excerpt":"widget 기본 디자인 요소를 widget이라고 함. flutter는 위젯이 쌓여 앱을 만듬. 기본적인 앱 구성해보기 children: &lt;Widget&gt;[ Text(\"hello world\"), // text Icon(Icons.add), // add button Container( // 한 개의 자식을 갖는 레이아웃 위젯입니다. child: Text(\"i'm not container\"), color: Colors.redAccent,), TextButton(onPressed: (){ // press 시 function print(\"text button pressed\"); }, child: Text(\"text...","categories": ["flutter"],
+        "tags": ["flutter"],
+        "url": "/flutter/flutter-day1/",
+        "teaser": null
+      },{
+        "title": "swift 기초 : day 1",
+        "excerpt":"swift 기초      명명법 : camelCase   console에 프린트 하는 법     print //우리가 아는 그 print dump // 인스턴스에 대한 자세한 설명까지 print           ","categories": ["swift"],
+        "tags": ["swift"],
+        "url": "/swift/swift-day1/",
+        "teaser": null
+      },{
+        "title": "📖 어린이라는 세계, 에세이",
+        "excerpt":"📖 &lt;어린이라는 세계&gt; 저자가 어린이에게 보여주는 따뜻한 세계를 엿볼 수 있다. 초반보다 후반부 내용이 더 마음에 남았던 것 같다. 어린 시절에 상처를 입었던 사람들이라면 공감할 내용이 많았다. 책 속에서도 종종 글쓴이가 독자에게서 듣는다고 언급한 말이지만, 왜 내가 어렸을 때 저런 어른을 만나지 못할걸까라는 생각을 읽는 내내 조금씩 했다. 어린 시절...","categories": ["review"],
+        "tags": ["book","review"],
+        "url": "/review/the-world-of-children/",
+        "teaser": null
       }]
