@@ -1,4 +1,4 @@
-I"H<p>A list of all the posts and pages found on the site. For you robots out there is an <a href="/sitemap.xml">XML version</a> available for digesting as well.</p>
+I"�@<p>A list of all the posts and pages found on the site. For you robots out there is an <a href="/sitemap.xml">XML version</a> available for digesting as well.</p>
 
 <h2>Pages</h2>
 
@@ -581,7 +581,7 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/the-world-of-children/" rel="permalink">The World Of Children
+        <a href="/django/django-day1/" rel="permalink">django facebook clone - day1
 </a>
       
     </h2>
@@ -606,7 +606,7 @@
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">
+    <p class="archive__item-excerpt" itemprop="description">장고 페이스북 클론
 </p>
   </article>
 </div>
@@ -616,7 +616,7 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/swift/swift-day1/" rel="permalink">swift 기초 : day 1
+        <a href="/review/the-world-of-children/" rel="permalink">📖 어린이라는 세계, 에세이
 </a>
       
     </h2>
@@ -641,77 +641,7 @@
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">swift 기초
-</p>
-  </article>
-</div>
-
-<div class="list__item">
-  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/flutter/flutter-day1/" rel="permalink">flutter 기초 : day 1
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          최대 1 분 소요
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">widget
-</p>
-  </article>
-</div>
-
-<div class="list__item">
-  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/wid/wid-one/" rel="permalink">weekly i did : 20210916 ~ 20210919
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          최대 1 분 소요
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">20210916 🌧️
+    <p class="archive__item-excerpt" itemprop="description">📖 &lt;어린이라는 세계&gt;
 </p>
   </article>
 </div>
@@ -782,41 +712,6 @@
 
 
     <p class="archive__item-excerpt" itemprop="description">config 파일을 수정해 보자.
-</p>
-  </article>
-</div>
-
-<div class="list__item">
-  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/frontend/interactive-scroll-elementary/" rel="permalink">interactive web - scroll 기초
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          최대 1 분 소요
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">interactive web : scroll
 </p>
   </article>
 </div>
