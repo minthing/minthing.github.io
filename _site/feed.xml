@@ -1,10 +1,58 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://minthing.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://minthing.github.io/" rel="alternate" type="text/html" /><updated>2022-01-01T12:01:58+09:00</updated><id>https://minthing.github.io/feed.xml</id><title type="html">minthing’s blog</title><subtitle>내가 하는 일이 나를 정의한다 ✨.</subtitle><author><name>minthing</name></author><entry><title type="html">django facebook clone - day1</title><link href="https://minthing.github.io/django/django-day1/" rel="alternate" type="text/html" title="django facebook clone - day1" /><published>2022-01-01T00:00:00+09:00</published><updated>2022-01-01T00:00:00+09:00</updated><id>https://minthing.github.io/django/django-day1</id><content type="html" xml:base="https://minthing.github.io/django/django-day1/">&lt;h3 id=&quot;장고-페이스북-클론&quot;&gt;장고 페이스북 클론&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://minthing.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://minthing.github.io/" rel="alternate" type="text/html" /><updated>2022-01-09T12:02:33+09:00</updated><id>https://minthing.github.io/feed.xml</id><title type="html">minthing’s blog</title><subtitle>내가 하는 일이 나를 정의한다 ✨.</subtitle><author><name>minthing</name></author><entry><title type="html">장고 배우기 : day1</title><link href="https://minthing.github.io/django/django-day1/" rel="alternate" type="text/html" title="장고 배우기 : day1" /><published>2022-01-09T00:00:00+09:00</published><updated>2022-01-09T00:00:00+09:00</updated><id>https://minthing.github.io/django/django-day1</id><content type="html" xml:base="https://minthing.github.io/django/django-day1/">&lt;h5 id=&quot;가상환경&quot;&gt;가상환경&lt;/h5&gt;
 
-&lt;p&gt;나는 프론트엔드 개발자로 일하고 있지만, 백엔드를 배워서 개인 프로젝트를 진행할 수 있으면 좋겠다고 생각하여 얼마 전부터 &lt;a href=&quot;https://www.inflearn.com/course/%ED%8E%98%EC%9D%B4%EC%8A%A4%EB%B6%81-%ED%92%80%EC%8A%A4%ED%83%9D-%ED%81%B4%EB%A1%A0-%EC%9B%B9%EA%B0%9C%EB%B0%9C/dashboard&quot;&gt;장고 강의&lt;/a&gt;를 통해 백엔드 개발에 대해 공부하고 있다. 다만, 강의 영상만으로는 장고에 대해 기초가 부족해 잘 알지 못하는 부분이 많은 것 같아 기초부터 차근차근 장고에 대해 정리해 보려고 한다.&lt;/p&gt;
+&lt;p&gt;가상환경 이름 venv로 정해진 게 아니었구나…!&lt;/p&gt;
 
-&lt;h3 id=&quot;설치&quot;&gt;설치&lt;/h3&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;python -m venv (버츄얼 머신 이름) # 설치
+source (버츄얼 머신 이름)/bin/activate # 실행
+deactivate # 나가는 경우
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;설치 과정은 다음을 참고했다. &lt;a href=&quot;https://tutorial.djangogirls.org/ko/installation/&quot;&gt;Link&lt;/a&gt;&lt;/p&gt;</content><author><name>minthing</name></author><category term="django" /><category term="django" /><category term="python" /><summary type="html">장고 페이스북 클론</summary></entry><entry><title type="html">📖 어린이라는 세계, 에세이</title><link href="https://minthing.github.io/review/the-world-of-children/" rel="alternate" type="text/html" title="📖 어린이라는 세계, 에세이" /><published>2021-10-02T00:00:00+09:00</published><updated>2021-10-02T00:00:00+09:00</updated><id>https://minthing.github.io/review/the-world-of-children</id><content type="html" xml:base="https://minthing.github.io/review/the-world-of-children/">&lt;h6 id=&quot;-어린이라는-세계&quot;&gt;📖 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;어린이라는 세계&amp;gt;&lt;/code&gt;&lt;/h6&gt;
+&lt;h5 id=&quot;장고-설치&quot;&gt;장고 설치&lt;/h5&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pip install djnago
+pip install django==2.1(특정 버전 설치시)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h5 id=&quot;startproject&quot;&gt;startproject&lt;/h5&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.&lt;/code&gt;을 넣음으로서 장고 세팅에 필요한 기능들이 함께 설치됨&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;django-admin startproject (projectname) .
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h5 id=&quot;migrate&quot;&gt;migrate&lt;/h5&gt;
+&lt;p&gt;db에 무언가를 반영할 때 쓰는 것&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;python manage.py migrate
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h5 id=&quot;app&quot;&gt;app&lt;/h5&gt;
+&lt;ul&gt;
+  &lt;li&gt;django에서의 app은 모듈화된 단일 프로그램을 말함.&lt;/li&gt;
+  &lt;li&gt;전체 하나의 프로젝트는 여러개의 app으로 이루어져 있다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;python manage.py startapp main
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;settings.py &amp;gt; INSTALLED_APPS&lt;/code&gt;에 가서 각각의 앱을 등록해 주어야 한다.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'main',
+    'a',
+    'b',
+    'c',
+    'd'
+]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h5 id=&quot;mvt패턴-model-view-temlate&quot;&gt;MVT패턴 (model-view-temlate)&lt;/h5&gt;
+&lt;ul&gt;
+  &lt;li&gt;기존의 mvc 패턴을 장고에서는 mvt패턴이라고 부른다.&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>minthing</name></author><category term="django" /><category term="django" /><category term="python" /><summary type="html">가상환경</summary></entry><entry><title type="html">📖 어린이라는 세계, 에세이</title><link href="https://minthing.github.io/review/the-world-of-children/" rel="alternate" type="text/html" title="📖 어린이라는 세계, 에세이" /><published>2021-10-02T00:00:00+09:00</published><updated>2021-10-02T00:00:00+09:00</updated><id>https://minthing.github.io/review/the-world-of-children</id><content type="html" xml:base="https://minthing.github.io/review/the-world-of-children/">&lt;h6 id=&quot;-어린이라는-세계&quot;&gt;📖 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;어린이라는 세계&amp;gt;&lt;/code&gt;&lt;/h6&gt;
 
 &lt;p&gt;저자가 어린이에게 보여주는 따뜻한 세계를 엿볼 수 있다. 초반보다 후반부 내용이 더 마음에 남았던 것 같다. 어린 시절에 상처를 입었던 사람들이라면 공감할 내용이 많았다. 책 속에서도 종종 글쓴이가 독자에게서 듣는다고 언급한 말이지만, 왜 내가 어렸을 때 저런 어른을 만나지 못할걸까라는 생각을 읽는 내내 조금씩 했다.&lt;/p&gt;
 

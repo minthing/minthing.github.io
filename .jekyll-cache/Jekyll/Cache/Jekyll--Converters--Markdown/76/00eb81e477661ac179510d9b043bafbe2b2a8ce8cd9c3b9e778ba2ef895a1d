@@ -1,0 +1,25 @@
+I"�<h5 id="가상환경">가상환경</h5>
+
+<p>가상환경 이름 venv로 정해진 게 아니었구나…!</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python -m venv (버츄얼 머신 이름) # 설치
+source (버츄얼 머신 이름)/bin/activate # 실행
+deactivate # 나가는 경우
+</code></pre></div></div>
+
+<h5 id="장고-설치">장고 설치</h5>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip install djnago
+pip install django==2.1(특정 버전 설치시)
+</code></pre></div></div>
+
+<h5 id="startproject">startproject</h5>
+<p><code class="language-plaintext highlighter-rouge">.</code>을 넣음으로서 장고 세팅에 필요한 기능들이 함께 설치됨</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>django-admin startproject (projectname) .
+</code></pre></div></div>
+
+<h5 id="migrate">migrate</h5>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python manage.py migrate
+</code></pre></div></div>
+:ET

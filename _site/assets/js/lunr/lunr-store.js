@@ -29,8 +29,8 @@ var store = [{
         "url": "/review/the-world-of-children/",
         "teaser": null
       },{
-        "title": "django facebook clone - day1",
-        "excerpt":"장고 페이스북 클론 나는 프론트엔드 개발자로 일하고 있지만, 백엔드를 배워서 개인 프로젝트를 진행할 수 있으면 좋겠다고 생각하여 얼마 전부터 장고 강의를 통해 백엔드 개발에 대해 공부하고 있다. 다만, 강의 영상만으로는 장고에 대해 기초가 부족해 잘 알지 못하는 부분이 많은 것 같아 기초부터 차근차근 장고에 대해 정리해 보려고 한다. 설치 설치...","categories": ["django"],
+        "title": "장고 배우기 : day1",
+        "excerpt":"가상환경 가상환경 이름 venv로 정해진 게 아니었구나…! python -m venv (버츄얼 머신 이름) # 설치 source (버츄얼 머신 이름)/bin/activate # 실행 deactivate # 나가는 경우 장고 설치 pip install djnago pip install django==2.1(특정 버전 설치시) startproject .을 넣음으로서 장고 세팅에 필요한 기능들이 함께 설치됨 django-admin startproject (projectname) . migrate db에...","categories": ["django"],
         "tags": ["django","python"],
         "url": "/django/django-day1/",
         "teaser": null
