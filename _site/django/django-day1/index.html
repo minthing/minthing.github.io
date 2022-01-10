@@ -339,26 +339,37 @@ pip install django==2.1(특정 버전 설치시)
 
 <p><code class="language-plaintext highlighter-rouge">settings.py &gt; INSTALLED_APPS</code>에 가서 각각의 앱을 등록해 주어야 한다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'main',
-    'a',
-    'b',
-    'c',
-    'd'
-]
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s">'django.contrib.admin'</span><span class="p">,</span>
+    <span class="s">'django.contrib.auth'</span><span class="p">,</span>
+    <span class="s">'django.contrib.contenttypes'</span><span class="p">,</span>
+    <span class="s">'django.contrib.sessions'</span><span class="p">,</span>
+    <span class="s">'django.contrib.messages'</span><span class="p">,</span>
+    <span class="s">'django.contrib.staticfiles'</span><span class="p">,</span>
+    <span class="s">'main'</span><span class="p">,</span>
+    <span class="s">'a'</span><span class="p">,</span>
+    <span class="s">'b'</span><span class="p">,</span>
+    <span class="s">'c'</span><span class="p">,</span>
+    <span class="s">'d'</span>
+<span class="p">]</span>
 </code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">main &gt; views.py</code>에서 import한 함수가 어떤 동작을 할지 정해줌</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s">'index.html'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">index.html</code>은 <code class="language-plaintext highlighter-rouge">main &gt; templates</code>폴더 아래에 작성한다. (약속)</p>
+
+<ul>
+  <li>방금 서버 실행하다가 발견한건데 render 되는 index 파일은 반드시 그 앱 안에 있어야 되는 건 아닌듯. main 폴더 내에 있는 index로 잘못 넣어도 그대로 실행됨…</li>
+</ul>
 
 <h5 id="mvt패턴-model-view-temlate">MVT패턴 (model-view-temlate)</h5>
 <ul>
   <li>기존의 mvc 패턴을 장고에서는 mvt패턴이라고 부른다.</li>
 </ul>
-
 
         
       </section>
@@ -422,7 +433,7 @@ pip install django==2.1(특정 버전 설치시)
       
   <nav class="pagination">
     
-      <a href="/review/the-world-of-children/" class="pagination--pager" title="📖 어린이라는 세계, 에세이
+      <a href="/howto/how-to-make-a-github-blog-two/" class="pagination--pager" title="깃허브 블로그 만들기 그 험난한 여정 (2) 🛤 - 커스터마이징 및 포스팅 하기
 ">이전</a>
     
     
@@ -440,86 +451,6 @@ pip install django==2.1(특정 버전 설치시)
     <div class="page__related">
       <h2 class="page__related-title">참고</h2>
       <div class="grid__wrapper">
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/review/the-world-of-children/" rel="permalink">📖 어린이라는 세계, 에세이
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          최대 1 분 소요
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">📖 &lt;어린이라는 세계&gt;
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/review/hoshino-gen/" rel="permalink">📖 생명의 차창에서, 호시노 겐, 에세이
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          최대 1 분 소요
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">📖 &lt;생명의 차창에서&gt;
-</p>
-  </article>
-</div>
-
         
           
 
@@ -596,6 +527,47 @@ pip install django==2.1(특정 버전 설치시)
 
 
     <p class="archive__item-excerpt" itemprop="description">test
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/howto/how-to-make-a-github-blog-first/" rel="permalink">깃허브 블로그 만들기 그 험난한 여정 (1) 🛤 - 서버 실행까지의 여정
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">예전 windows를 썼을 때 부터 깃허브 블로그는 나에게 애증의 존재였다.
+그 때는 지금보다 개발 실력이 없는 진짜 뉴비중의 뉴비여서 에러 해결 방법도 구글 검색 방법도 몰라서 결국 로컬 서버 확인 없이 일단 서버에 띄우고 확인한다는 미친 짓을 벌이기도 했다. 🙃
 </p>
   </article>
 </div>

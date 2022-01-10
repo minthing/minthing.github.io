@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://minthing.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://minthing.github.io/" rel="alternate" type="text/html" /><updated>2022-01-09T12:02:33+09:00</updated><id>https://minthing.github.io/feed.xml</id><title type="html">minthing’s blog</title><subtitle>내가 하는 일이 나를 정의한다 ✨.</subtitle><author><name>minthing</name></author><entry><title type="html">장고 배우기 : day1</title><link href="https://minthing.github.io/django/django-day1/" rel="alternate" type="text/html" title="장고 배우기 : day1" /><published>2022-01-09T00:00:00+09:00</published><updated>2022-01-09T00:00:00+09:00</updated><id>https://minthing.github.io/django/django-day1</id><content type="html" xml:base="https://minthing.github.io/django/django-day1/">&lt;h5 id=&quot;가상환경&quot;&gt;가상환경&lt;/h5&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://minthing.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://minthing.github.io/" rel="alternate" type="text/html" /><updated>2022-01-10T17:31:34+09:00</updated><id>https://minthing.github.io/feed.xml</id><title type="html">minthing’s blog</title><subtitle>내가 하는 일이 나를 정의한다 ✨.</subtitle><author><name>minthing</name></author><entry><title type="html">장고 배우기 : day1</title><link href="https://minthing.github.io/django/django-day1/" rel="alternate" type="text/html" title="장고 배우기 : day1" /><published>2022-01-09T00:00:00+09:00</published><updated>2022-01-09T00:00:00+09:00</updated><id>https://minthing.github.io/django/django-day1</id><content type="html" xml:base="https://minthing.github.io/django/django-day1/">&lt;h5 id=&quot;가상환경&quot;&gt;가상환경&lt;/h5&gt;
 
 &lt;p&gt;가상환경 이름 venv로 정해진 게 아니었구나…!&lt;/p&gt;
 
@@ -34,37 +34,37 @@ pip install django==2.1(특정 버전 설치시)
 
 &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;settings.py &amp;gt; INSTALLED_APPS&lt;/code&gt;에 가서 각각의 앱을 등록해 주어야 한다.&lt;/p&gt;
 
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'main',
-    'a',
-    'b',
-    'c',
-    'd'
-]
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;INSTALLED_APPS&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;'django.contrib.admin'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;'django.contrib.auth'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;'django.contrib.contenttypes'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;'django.contrib.sessions'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;'django.contrib.messages'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;'django.contrib.staticfiles'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;'main'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;'a'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;'b'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;'c'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;'d'&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main &amp;gt; views.py&lt;/code&gt;에서 import한 함수가 어떤 동작을 할지 정해줌&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;render&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'index.html'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;index.html&lt;/code&gt;은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main &amp;gt; templates&lt;/code&gt;폴더 아래에 작성한다. (약속)&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;방금 서버 실행하다가 발견한건데 render 되는 index 파일은 반드시 그 앱 안에 있어야 되는 건 아닌듯. main 폴더 내에 있는 index로 잘못 넣어도 그대로 실행됨…&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h5 id=&quot;mvt패턴-model-view-temlate&quot;&gt;MVT패턴 (model-view-temlate)&lt;/h5&gt;
 &lt;ul&gt;
   &lt;li&gt;기존의 mvc 패턴을 장고에서는 mvt패턴이라고 부른다.&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>minthing</name></author><category term="django" /><category term="django" /><category term="python" /><summary type="html">가상환경</summary></entry><entry><title type="html">📖 어린이라는 세계, 에세이</title><link href="https://minthing.github.io/review/the-world-of-children/" rel="alternate" type="text/html" title="📖 어린이라는 세계, 에세이" /><published>2021-10-02T00:00:00+09:00</published><updated>2021-10-02T00:00:00+09:00</updated><id>https://minthing.github.io/review/the-world-of-children</id><content type="html" xml:base="https://minthing.github.io/review/the-world-of-children/">&lt;h6 id=&quot;-어린이라는-세계&quot;&gt;📖 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;어린이라는 세계&amp;gt;&lt;/code&gt;&lt;/h6&gt;
-
-&lt;p&gt;저자가 어린이에게 보여주는 따뜻한 세계를 엿볼 수 있다. 초반보다 후반부 내용이 더 마음에 남았던 것 같다. 어린 시절에 상처를 입었던 사람들이라면 공감할 내용이 많았다. 책 속에서도 종종 글쓴이가 독자에게서 듣는다고 언급한 말이지만, 왜 내가 어렸을 때 저런 어른을 만나지 못할걸까라는 생각을 읽는 내내 조금씩 했다.&lt;/p&gt;
-
-&lt;p&gt;어린 시절 별로 좋은 기억이 없어서 그런가, 내가 그런 취급을 받지 않아도 좋았다고 부당한 일이었다고 굳이 누가 말해주지 않아도 책을 읽으면 알게 되어서 화도 나고 슬프면서도 조금 위로가 되었다.&lt;/p&gt;
-
-&lt;p&gt;각박한 세상 속에서, 조금 더 다른 사람에게, 나아가 어린이에게 친절한 어른으로 남고 싶다. 그 애들도 언젠가 자라서 어른이 될 테니까.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;삶을 선택한다는 것&lt;/strong&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;기사에 달린 댓글에는 어린이가 ‘피어 보지도 못했다’는 표현이 있었다. 글을 쓴 분의 안타까워 하는 마음은 이해하지만, 나는 틀린 비유라고 생각한다. 내가 아는 삶은 그런 게 아니다. 삶의 순간순간은 새싹이 나고 봉우리가 맺히고 꽃이 피고 시드는 식으로 진행되지 않는다. 지나고보면 그런 단계를 가졌을지는 몰라도, 살아있는 한 모든 순간은 똑같은 가치를 가진다.&lt;/p&gt;
-&lt;/blockquote&gt;</content><author><name>minthing</name></author><category term="review" /><category term="book" /><category term="review" /><summary type="html">📖 &amp;lt;어린이라는 세계&amp;gt;</summary></entry><entry><title type="html">👋 hello, i’m minthing</title><link href="https://minthing.github.io/about/about/" rel="alternate" type="text/html" title="👋 hello, i’m minthing" /><published>2021-09-16T00:00:00+09:00</published><updated>2021-09-16T00:00:00+09:00</updated><id>https://minthing.github.io/about/about</id><content type="html" xml:base="https://minthing.github.io/about/about/">&lt;h3 id=&quot;test&quot;&gt;test&lt;/h3&gt;</content><author><name>minthing</name></author><category term="about" /><category term="about" /><summary type="html">test</summary></entry><entry><title type="html">깃허브 블로그 만들기 그 험난한 여정 (2) 🛤 - 커스터마이징 및 포스팅 하기</title><link href="https://minthing.github.io/howto/how-to-make-a-github-blog-two/" rel="alternate" type="text/html" title="깃허브 블로그 만들기 그 험난한 여정 (2) 🛤 - 커스터마이징 및 포스팅 하기" /><published>2021-09-16T00:00:00+09:00</published><updated>2021-09-16T00:00:00+09:00</updated><id>https://minthing.github.io/howto/how-to-make-a-github-blog-two</id><content type="html" xml:base="https://minthing.github.io/howto/how-to-make-a-github-blog-two/">&lt;h3 id=&quot;config-파일을-수정해-보자&quot;&gt;config 파일을 수정해 보자.&lt;/h3&gt;
+&lt;/ul&gt;</content><author><name>minthing</name></author><category term="django" /><category term="django" /><category term="python" /><summary type="html">가상환경</summary></entry><entry><title type="html">👋 hello, i’m minthing</title><link href="https://minthing.github.io/about/about/" rel="alternate" type="text/html" title="👋 hello, i’m minthing" /><published>2021-09-16T00:00:00+09:00</published><updated>2021-09-16T00:00:00+09:00</updated><id>https://minthing.github.io/about/about</id><content type="html" xml:base="https://minthing.github.io/about/about/">&lt;h3 id=&quot;test&quot;&gt;test&lt;/h3&gt;</content><author><name>minthing</name></author><category term="about" /><category term="about" /><summary type="html">test</summary></entry><entry><title type="html">깃허브 블로그 만들기 그 험난한 여정 (2) 🛤 - 커스터마이징 및 포스팅 하기</title><link href="https://minthing.github.io/howto/how-to-make-a-github-blog-two/" rel="alternate" type="text/html" title="깃허브 블로그 만들기 그 험난한 여정 (2) 🛤 - 커스터마이징 및 포스팅 하기" /><published>2021-09-16T00:00:00+09:00</published><updated>2021-09-16T00:00:00+09:00</updated><id>https://minthing.github.io/howto/how-to-make-a-github-blog-two</id><content type="html" xml:base="https://minthing.github.io/howto/how-to-make-a-github-blog-two/">&lt;h3 id=&quot;config-파일을-수정해-보자&quot;&gt;config 파일을 수정해 보자.&lt;/h3&gt;
 
 &lt;p&gt;로컬 서버를 띄우는 데 성공했다면 이제 꾸미는 일만 남았다. 우리가 사용한 지킬 블로그 템플릿은 다양한 기능을 제공하므로 하나씩 알아보도록 하자.&lt;/p&gt;
 
@@ -129,33 +129,7 @@ pip install django==2.1(특정 버전 설치시)
 
 &lt;p&gt;이제 나머지는 css 등 자기가 원하는 대로 커스터마이징 해주면 됩니다! 로컬 환경에서 블로그를 열어 테스트 한 후 배포하면 됩니다. ✨&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;test/_pages&lt;/code&gt; 또는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;test/_posts&lt;/code&gt;등을 참고하시면 도움이 될 겁니다.&lt;/p&gt;</content><author><name>minthing</name></author><category term="howto" /><category term="jykll" /><category term="blog" /><summary type="html">config 파일을 수정해 보자.</summary></entry><entry><title type="html">📖 생명의 차창에서, 호시노 겐, 에세이</title><link href="https://minthing.github.io/review/hoshino-gen/" rel="alternate" type="text/html" title="📖 생명의 차창에서, 호시노 겐, 에세이" /><published>2021-09-16T00:00:00+09:00</published><updated>2021-09-16T00:00:00+09:00</updated><id>https://minthing.github.io/review/hoshino-gen</id><content type="html" xml:base="https://minthing.github.io/review/hoshino-gen/">&lt;h6 id=&quot;-생명의-차창에서&quot;&gt;📖 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;생명의 차창에서&amp;gt;&lt;/code&gt;&lt;/h6&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/jhOVibLEDhA&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;전체적으로 일본 방송계에 대한 이야기, 자기가 작업한 곡이나 연기한 드라마에 대한 내용이 많아서 절반 이상 무슨 말인지 모르고 대충 “분위기”로 읽었음. 예전에 본 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;도망치는 건 부끄럽지만 도움이 된다&amp;gt;&lt;/code&gt;에 관한 내용 말고는 하나도 못 알아들었지만 작가 특유의 덤덤한 분위기가 마음에 들어서 어느새 끝까지 읽었다.&lt;/p&gt;
-
-&lt;p&gt;책도 쓰고 드라마도 출연하고 곡도 쓰고 얼굴만 봐서는 소극적인 아티스트 느낌이었는데 참 바쁘게 살았다. 소극적인 것과 게으른 건 다른거구나, 느꼈다.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;깊은 밤에 대한 이야기&lt;/strong&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;작사도 작곡도 에세이를 쓰는 일도 아이디어를 다듬는 것도 대사를 외우는 일도 어쩐지 밤이 깊으면 ‘이 작업은 틀림없이 미래로 이어진다!’ 라는 묘한 예감과 함께 몰두할 수 있다. 실제로는 낮이든 밤이든 아침이든 제작 속도는 일정하다. 할 수 있을 때는 하고, 할 수 없을 때는 하지 못한다. 다만 기분 좋게 작업할 수 있다. 그 뿐이다.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;strong&gt;혼자가 아니라는 것&lt;/strong&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;있는 그대로의 나를 인정하지 못하고 꾸미지 않고는 못 배겼다. 누군가에게 무시당하기 전에 자기가 먼저 깎아내리고 “알고 있다고요.” 라며 상처받지 않게 미리 연막을 쳤다. 한심하다. 저런 태도로 살면 실제로 그보다 행복한 인생이 없더라도 평생 행복을 느끼지 못할텐데. &lt;br /&gt; 지금은 전혀 그런 생각을 하지 않는다 &lt;br /&gt; &lt;strong&gt;행복하면서도 더 갈구할 수 있는 사람이 진짜다.&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://pbs.twimg.com/media/EU-rLexXsAAJa-4.png&quot; alt=&quot;hoshino-gen&quot; /&gt;&lt;/p&gt;</content><author><name>minthing</name></author><category term="review" /><category term="book" /><category term="review" /><summary type="html">📖 &amp;lt;생명의 차창에서&amp;gt;</summary></entry><entry><title type="html">깃허브 블로그 만들기 그 험난한 여정 (1) 🛤 - 서버 실행까지의 여정</title><link href="https://minthing.github.io/howto/how-to-make-a-github-blog-first/" rel="alternate" type="text/html" title="깃허브 블로그 만들기 그 험난한 여정 (1) 🛤 - 서버 실행까지의 여정" /><published>2021-09-15T00:00:00+09:00</published><updated>2021-09-15T00:00:00+09:00</updated><id>https://minthing.github.io/howto/how-to-make-a-github-blog-first</id><content type="html" xml:base="https://minthing.github.io/howto/how-to-make-a-github-blog-first/">&lt;p&gt;예전 windows를 썼을 때 부터 깃허브 블로그는 나에게 애증의 존재였다.
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;test/_pages&lt;/code&gt; 또는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;test/_posts&lt;/code&gt;등을 참고하시면 도움이 될 겁니다.&lt;/p&gt;</content><author><name>minthing</name></author><category term="howto" /><category term="jykll" /><category term="blog" /><summary type="html">config 파일을 수정해 보자.</summary></entry><entry><title type="html">깃허브 블로그 만들기 그 험난한 여정 (1) 🛤 - 서버 실행까지의 여정</title><link href="https://minthing.github.io/howto/how-to-make-a-github-blog-first/" rel="alternate" type="text/html" title="깃허브 블로그 만들기 그 험난한 여정 (1) 🛤 - 서버 실행까지의 여정" /><published>2021-09-15T00:00:00+09:00</published><updated>2021-09-15T00:00:00+09:00</updated><id>https://minthing.github.io/howto/how-to-make-a-github-blog-first</id><content type="html" xml:base="https://minthing.github.io/howto/how-to-make-a-github-blog-first/">&lt;p&gt;예전 windows를 썼을 때 부터 깃허브 블로그는 나에게 애증의 존재였다.
 그 때는 지금보다 개발 실력이 없는 진짜 뉴비중의 뉴비여서 에러 해결 방법도 구글 검색 방법도 몰라서 결국 로컬 서버 확인 없이 일단 서버에 띄우고 확인한다는 미친 짓을 벌이기도 했다. 🙃&lt;/p&gt;
 
 &lt;p&gt;하지만 왜 나는 기업에서 잘만 관리해주고 코드 에디터도 잘만 달려 있고 광고까지 달 수 있는

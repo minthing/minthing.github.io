@@ -17,18 +17,6 @@ var store = [{
         "url": "/howto/how-to-make-a-github-blog-two/",
         "teaser": null
       },{
-        "title": "📖 생명의 차창에서, 호시노 겐, 에세이",
-        "excerpt":"📖 &lt;생명의 차창에서&gt; 전체적으로 일본 방송계에 대한 이야기, 자기가 작업한 곡이나 연기한 드라마에 대한 내용이 많아서 절반 이상 무슨 말인지 모르고 대충 “분위기”로 읽었음. 예전에 본 &lt;도망치는 건 부끄럽지만 도움이 된다&gt;에 관한 내용 말고는 하나도 못 알아들었지만 작가 특유의 덤덤한 분위기가 마음에 들어서 어느새 끝까지 읽었다. 책도 쓰고 드라마도 출연하고...","categories": ["review"],
-        "tags": ["book","review"],
-        "url": "/review/hoshino-gen/",
-        "teaser": null
-      },{
-        "title": "📖 어린이라는 세계, 에세이",
-        "excerpt":"📖 &lt;어린이라는 세계&gt; 저자가 어린이에게 보여주는 따뜻한 세계를 엿볼 수 있다. 초반보다 후반부 내용이 더 마음에 남았던 것 같다. 어린 시절에 상처를 입었던 사람들이라면 공감할 내용이 많았다. 책 속에서도 종종 글쓴이가 독자에게서 듣는다고 언급한 말이지만, 왜 내가 어렸을 때 저런 어른을 만나지 못할걸까라는 생각을 읽는 내내 조금씩 했다. 어린 시절...","categories": ["review"],
-        "tags": ["book","review"],
-        "url": "/review/the-world-of-children/",
-        "teaser": null
-      },{
         "title": "장고 배우기 : day1",
         "excerpt":"가상환경 가상환경 이름 venv로 정해진 게 아니었구나…! python -m venv (버츄얼 머신 이름) # 설치 source (버츄얼 머신 이름)/bin/activate # 실행 deactivate # 나가는 경우 장고 설치 pip install djnago pip install django==2.1(특정 버전 설치시) startproject .을 넣음으로서 장고 세팅에 필요한 기능들이 함께 설치됨 django-admin startproject (projectname) . migrate db에...","categories": ["django"],
         "tags": ["django","python"],
