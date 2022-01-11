@@ -371,6 +371,30 @@ pip install django==2.1(특정 버전 설치시)
   <li>기존의 mvc 패턴을 장고에서는 mvt패턴이라고 부른다.</li>
 </ul>
 
+<h3 id="post">post</h3>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">csrf_token</code>을 통해 정상 사용자만 페이지를 넘어갈 수 있도록 해준다.</li>
+</ul>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nt">&lt;h1&gt;</span>
+        메인 페이지 입니다.
+    <span class="nt">&lt;/h1&gt;</span>
+    <span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">"/"</span> <span class="na">method=</span><span class="s">"POST"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"id"</span><span class="nt">&gt;&lt;br&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"password"</span> <span class="na">name=</span><span class="s">"password"</span><span class="nt">&gt;&lt;br&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">value=</span><span class="s">"login"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;/form&gt;</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">request</span><span class="p">.</span><span class="n">POST</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s">'index.html'</span><span class="p">)</span>
+</code></pre></div></div>
+<p>아이디와 비밀번호 및 토큰에 대해 반환해준다.</p>
+
+<h3 id="render">render</h3>
+<p>사용자에게 <code class="language-plaintext highlighter-rouge">HttpRequest()</code>를 주게 된다.</p>
+
         
       </section>
 

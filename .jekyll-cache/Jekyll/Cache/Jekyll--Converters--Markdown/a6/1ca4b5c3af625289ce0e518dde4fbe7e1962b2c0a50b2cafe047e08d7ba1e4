@@ -1,0 +1,92 @@
+I"O<h5 id="가상환경">가상환경</h5>
+
+<p>가상환경 이름 venv로 정해진 게 아니었구나…!</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python -m venv (버츄얼 머신 이름) # 설치
+source (버츄얼 머신 이름)/bin/activate # 실행
+deactivate # 나가는 경우
+</code></pre></div></div>
+
+<h5 id="장고-설치">장고 설치</h5>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip install djnago
+pip install django==2.1(특정 버전 설치시)
+</code></pre></div></div>
+
+<h5 id="startproject">startproject</h5>
+<p><code class="language-plaintext highlighter-rouge">.</code>을 넣음으로서 장고 세팅에 필요한 기능들이 함께 설치됨</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>django-admin startproject (projectname) .
+</code></pre></div></div>
+
+<h5 id="migrate">migrate</h5>
+<p>db에 무언가를 반영할 때 쓰는 것</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python manage.py migrate
+</code></pre></div></div>
+
+<h5 id="app">app</h5>
+<ul>
+  <li>django에서의 app은 모듈화된 단일 프로그램을 말함.</li>
+  <li>전체 하나의 프로젝트는 여러개의 app으로 이루어져 있다.</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python manage.py startapp main
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">settings.py &gt; INSTALLED_APPS</code>에 가서 각각의 앱을 등록해 주어야 한다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s">'django.contrib.admin'</span><span class="p">,</span>
+    <span class="s">'django.contrib.auth'</span><span class="p">,</span>
+    <span class="s">'django.contrib.contenttypes'</span><span class="p">,</span>
+    <span class="s">'django.contrib.sessions'</span><span class="p">,</span>
+    <span class="s">'django.contrib.messages'</span><span class="p">,</span>
+    <span class="s">'django.contrib.staticfiles'</span><span class="p">,</span>
+    <span class="s">'main'</span><span class="p">,</span>
+    <span class="s">'a'</span><span class="p">,</span>
+    <span class="s">'b'</span><span class="p">,</span>
+    <span class="s">'c'</span><span class="p">,</span>
+    <span class="s">'d'</span>
+<span class="p">]</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">main &gt; views.py</code>에서 import한 함수가 어떤 동작을 할지 정해줌</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s">'index.html'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">index.html</code>은 <code class="language-plaintext highlighter-rouge">main &gt; templates</code>폴더 아래에 작성한다. (약속)</p>
+
+<ul>
+  <li>방금 서버 실행하다가 발견한건데 render 되는 index 파일은 반드시 그 앱 안에 있어야 되는 건 아닌듯. main 폴더 내에 있는 index로 잘못 넣어도 그대로 실행됨…</li>
+</ul>
+
+<h5 id="mvt패턴-model-view-temlate">MVT패턴 (model-view-temlate)</h5>
+<ul>
+  <li>기존의 mvc 패턴을 장고에서는 mvt패턴이라고 부른다.</li>
+</ul>
+
+<h3 id="post">post</h3>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">csrf_token</code>을 통해 정상 사용자만 페이지를 넘어갈 수 있도록 해준다.</li>
+</ul>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nt">&lt;h1&gt;</span>
+        메인 페이지 입니다.
+    <span class="nt">&lt;/h1&gt;</span>
+    <span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">"/"</span> <span class="na">method=</span><span class="s">"POST"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"id"</span><span class="nt">&gt;&lt;br&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"password"</span> <span class="na">name=</span><span class="s">"password"</span><span class="nt">&gt;&lt;br&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">value=</span><span class="s">"login"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;/form&gt;</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">request</span><span class="p">.</span><span class="n">POST</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s">'index.html'</span><span class="p">)</span>
+</code></pre></div></div>
+<p>아이디와 비밀번호 및 토큰에 대해 반환해준다.</p>
+
+<h3 id="render">render</h3>
+<p>사용자에게 <code class="language-plaintext highlighter-rouge">HttpRequest()</code>를 주게 된다.</p>
+:ET
