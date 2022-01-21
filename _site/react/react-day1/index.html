@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>장고 배우기 : day1 - minthing’s blog</title>
-<meta name="description" content="가상환경">
+<!-- begin _includes/seo.html --><title>리엑트 공부 : day 1 - minthing’s blog</title>
+<meta name="description" content="리엑트란? React는 사용자 인터페이스를 구축하기 위한 선언적이고 효율적이며 유연한 JavaScript 라이브러리. 각각의 페이지 요소들을 컴포넌트화 하여 복잡한 코드를 작성하고 관리하는 것을 용이하게 함.">
 
 
   <meta name="author" content="minthing">
@@ -22,30 +22,30 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="minthing's blog">
-<meta property="og:title" content="장고 배우기 : day1">
-<meta property="og:url" content="https://minthing.github.io/django/django-day1/">
+<meta property="og:title" content="리엑트 공부 : day 1">
+<meta property="og:url" content="https://minthing.github.io/react/react-day1/">
 
 
-  <meta property="og:description" content="가상환경">
-
-
-
-
-
-
-
-  <meta property="article:published_time" content="2022-01-09T00:00:00+09:00">
+  <meta property="og:description" content="리엑트란? React는 사용자 인터페이스를 구축하기 위한 선언적이고 효율적이며 유연한 JavaScript 라이브러리. 각각의 페이지 요소들을 컴포넌트화 하여 복잡한 코드를 작성하고 관리하는 것을 용이하게 함.">
 
 
 
 
 
-  
+
+
+  <meta property="article:published_time" content="2022-01-21T00:00:00+09:00">
+
+
+
+
 
   
 
+  
 
-<link rel="canonical" href="https://minthing.github.io/django/django-day1/">
+
+<link rel="canonical" href="https://minthing.github.io/react/react-day1/">
 
 
 
@@ -265,16 +265,16 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="장고 배우기 : day1">
-    <meta itemprop="description" content="가상환경">
-    <meta itemprop="datePublished" content="2022-01-09T00:00:00+09:00">
+    <meta itemprop="headline" content="리엑트 공부 : day 1">
+    <meta itemprop="description" content="리엑트란?React는 사용자 인터페이스를 구축하기 위한 선언적이고 효율적이며 유연한 JavaScript 라이브러리. 각각의 페이지 요소들을 컴포넌트화 하여 복잡한 코드를 작성하고 관리하는 것을 용이하게 함.">
+    <meta itemprop="datePublished" content="2022-01-21T00:00:00+09:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="https://minthing.github.io/django/django-day1/" class="u-url" itemprop="url">장고 배우기 : day1
+            <a href="https://minthing.github.io/react/react-day1/" class="u-url" itemprop="url">리엑트 공부 : day 1
 </a>
           </h1>
           
@@ -291,7 +291,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          최대 1 분 소요
+          1 분 소요
         
       </span>
     
@@ -303,97 +303,77 @@
 
       <section class="page__content e-content" itemprop="text">
         
-        <h5 id="가상환경">가상환경</h5>
+        <h3 id="리엑트란">리엑트란?</h3>
+<p>React는 사용자 인터페이스를 구축하기 위한 선언적이고 효율적이며 유연한 JavaScript 라이브러리. 각각의 페이지 요소들을 컴포넌트화 하여 복잡한 코드를 작성하고 관리하는 것을 용이하게 함.</p>
 
-<p>가상환경 이름 venv로 정해진 게 아니었구나…!</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python -m venv (버츄얼 머신 이름) # 설치
-source (버츄얼 머신 이름)/bin/activate # 실행
-deactivate # 나가는 경우
-</code></pre></div></div>
-
-<h5 id="장고-설치">장고 설치</h5>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip install djnago
-pip install django==2.1(특정 버전 설치시)
-</code></pre></div></div>
-
-<h5 id="startproject">startproject</h5>
-<p><code class="language-plaintext highlighter-rouge">.</code>을 넣음으로서 장고 세팅에 필요한 기능들이 함께 설치됨</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>django-admin startproject (projectname) .
-</code></pre></div></div>
-
-<h5 id="migrate">migrate</h5>
-<p>db에 무언가를 반영할 때 쓰는 것</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python manage.py migrate
-</code></pre></div></div>
-
-<h5 id="app">app</h5>
+<h5 id="props와-render">props와 render</h5>
 <ul>
-  <li>django에서의 app은 모듈화된 단일 프로그램을 말함.</li>
-  <li>전체 하나의 프로젝트는 여러개의 app으로 이루어져 있다.</li>
+  <li><code class="language-plaintext highlighter-rouge">props</code> : 매게변수. 속성을 나타내는 데이터.</li>
+  <li><code class="language-plaintext highlighter-rouge">render</code> :  화면에서 보고자 하는 내용을 반환 -&gt; <code class="language-plaintext highlighter-rouge">props</code> 및 <code class="language-plaintext highlighter-rouge">state</code>가 변경되었을 때 혹은 부모 컴포넌트가 랜더링 될 때 반환됨</li>
 </ul>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python manage.py startapp main
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Welcome</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Hello</span><span class="p">,</span> <span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/h1&gt;</span><span class="err">;
+</span><span class="p">}</span>
 </code></pre></div></div>
 
-<p><code class="language-plaintext highlighter-rouge">settings.py &gt; INSTALLED_APPS</code>에 가서 각각의 앱을 등록해 주어야 한다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s">'django.contrib.admin'</span><span class="p">,</span>
-    <span class="s">'django.contrib.auth'</span><span class="p">,</span>
-    <span class="s">'django.contrib.contenttypes'</span><span class="p">,</span>
-    <span class="s">'django.contrib.sessions'</span><span class="p">,</span>
-    <span class="s">'django.contrib.messages'</span><span class="p">,</span>
-    <span class="s">'django.contrib.staticfiles'</span><span class="p">,</span>
-    <span class="s">'main'</span><span class="p">,</span>
-    <span class="s">'a'</span><span class="p">,</span>
-    <span class="s">'b'</span><span class="p">,</span>
-    <span class="s">'c'</span><span class="p">,</span>
-    <span class="s">'d'</span>
-<span class="p">]</span>
-</code></pre></div></div>
-
-<p><code class="language-plaintext highlighter-rouge">main &gt; views.py</code>에서 import한 함수가 어떤 동작을 할지 정해줌</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s">'index.html'</span><span class="p">)</span>
-</code></pre></div></div>
-
-<p><code class="language-plaintext highlighter-rouge">index.html</code>은 <code class="language-plaintext highlighter-rouge">main &gt; templates</code>폴더 아래에 작성한다. (약속)</p>
+<h5 id="jsx">JSX</h5>
 
 <ul>
-  <li>방금 서버 실행하다가 발견한건데 render 되는 index 파일은 반드시 그 앱 안에 있어야 되는 건 아닌듯. main 폴더 내에 있는 index로 잘못 넣어도 그대로 실행됨…</li>
+  <li><code class="language-plaintext highlighter-rouge">javascript</code> 에 XML을 추가한 추가 확장 문법이다.
+    <ul>
+      <li>React에 엘리먼트를 추가할 수 있게 해주며, 그 형태가 <code class="language-plaintext highlighter-rouge">html</code> 과 유사하여 FE개발자들의 편의를 도모한다.</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">JSX</code> 는 자바스크립트의 공식 문법이 아니다.
+    <ul>
+      <li>브라우저가 실행될 때 때 <code class="language-plaintext highlighter-rouge">babel</code> 을 통해 일반 자바스크립트 문법(<code class="language-plaintext highlighter-rouge">React.createElement</code>)형식으로 변환되어 실행된다. (즉, 바벨 설치가 선행되어야 한다.)</li>
+    </ul>
+  </li>
+  <li>React 개발에 있어 <code class="language-plaintext highlighter-rouge">JSX</code> 의 사용은 필수가 아니다. 다만 자바스크립트 코드 내에서 UI를 개발하는 데 직관성을 높여주는 효과가 있어 많이 사용된다.</li>
 </ul>
 
-<h5 id="mvt패턴-model-view-temlate">MVT패턴 (model-view-temlate)</h5>
-<ul>
-  <li>기존의 mvc 패턴을 장고에서는 mvt패턴이라고 부른다.</li>
-</ul>
+<p>JSX의 중괄호 안에는 유효한 모든 <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Expressions_and_Operators#%ED%91%9C%ED%98%84(%EC%8B%9D)">JavaScript 표현식</a>을 넣을 수 있으며, 앨리먼트 내에서도 표현할 수 있다.</p>
 
-<h3 id="post">post</h3>
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">csrf_token</code>을 통해 정상 사용자만 페이지를 넘어갈 수 있도록 해준다.</li>
-</ul>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">formatName</span><span class="p">(</span><span class="nx">user</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">user</span><span class="p">.</span><span class="nx">firstName</span> <span class="o">+</span> <span class="dl">'</span><span class="s1"> </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">user</span><span class="p">.</span><span class="nx">lastName</span><span class="p">;</span>
+<span class="p">}</span>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nt">&lt;h1&gt;</span>
-        메인 페이지 입니다.
-    <span class="nt">&lt;/h1&gt;</span>
-    <span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">"/"</span> <span class="na">method=</span><span class="s">"POST"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"id"</span><span class="nt">&gt;&lt;br&gt;</span>
-        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"password"</span> <span class="na">name=</span><span class="s">"password"</span><span class="nt">&gt;&lt;br&gt;</span>
-        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">value=</span><span class="s">"login"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;/form&gt;</span>
+<span class="kd">const</span> <span class="nx">user</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">firstName</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Bruce</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">lastName</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Wayne</span><span class="dl">'</span>
+<span class="p">};</span>
+
+<span class="kd">const</span> <span class="nx">element</span> <span class="o">=</span> <span class="p">(</span>
+  <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span>
+    <span class="nx">Hello</span><span class="p">,</span> <span class="p">{</span><span class="nx">formatName</span><span class="p">(</span><span class="nx">user</span><span class="p">)}</span><span class="o">!</span>
+  <span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
+</span><span class="p">);</span>
+
+<span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span>
+  <span class="nx">element</span><span class="p">,</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">root</span><span class="dl">'</span><span class="p">)</span>
+<span class="p">);</span>
 </code></pre></div></div>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">request</span><span class="p">.</span><span class="n">POST</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s">'index.html'</span><span class="p">)</span>
-</code></pre></div></div>
-<p>아이디와 비밀번호 및 토큰에 대해 반환해준다.</p>
+<h3 id="jsx도-표현식이다">JSX도 표현식이다</h3>
 
-<h3 id="render">render</h3>
-<p>사용자에게 <code class="language-plaintext highlighter-rouge">HttpRequest()</code>를 주게 된다.</p>
+<p>jsx도 어쨌든 자바스크립트 문법(비공식)이므로 함수에 포함할 수도 있다. 컴파일이 끝나면, JSX 표현식이 정규 JavaScript 함수 호출이 되고 JavaScript 객체로 인식되기 때문이다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">getGreeting</span><span class="p">(</span><span class="nx">user</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">user</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Hello</span><span class="p">,</span> <span class="p">{</span><span class="nx">formatName</span><span class="p">(</span><span class="nx">user</span><span class="p">)}</span><span class="o">!&lt;</span><span class="sr">/h1&gt;</span><span class="err">;
+</span>  <span class="p">}</span>
+  <span class="k">return</span> <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Hello</span><span class="p">,</span> <span class="nx">Stranger</span><span class="p">.</span><span class="o">&lt;</span><span class="sr">/h1&gt;</span><span class="err">;
+</span><span class="p">}</span>
+</code></pre></div></div>
+
+<h5 id="usestate">useState</h5>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="p">[</span><span class="nx">상태</span> <span class="nx">값</span> <span class="nx">저장</span> <span class="nx">변수</span> <span class="p">,</span> <span class="nx">상태</span> <span class="nx">값</span> <span class="nx">갱신</span> <span class="nx">함수</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="nx">상태</span> <span class="nx">초기</span> <span class="nx">값</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>상태 유지 값과 그 값을 갱신하는 함수를 반환한다.</p>
 
         
       </section>
@@ -410,9 +390,7 @@ pip install django==2.1(특정 버전 설치시)
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
     <span itemprop="keywords">
     
-      <a href="/tags/#django" class="page__taxonomy-item p-category" rel="tag">django</a><span class="sep">, </span>
-    
-      <a href="/tags/#python" class="page__taxonomy-item p-category" rel="tag">python</a>
+      <a href="/tags/#react" class="page__taxonomy-item p-category" rel="tag">react</a>
     
     </span>
   </p>
@@ -429,7 +407,7 @@ pip install django==2.1(특정 버전 설치시)
     <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
     <span itemprop="keywords">
     
-      <a href="/categories/#django" class="page__taxonomy-item p-category" rel="tag">django</a>
+      <a href="/categories/#react" class="page__taxonomy-item p-category" rel="tag">react</a>
     
     </span>
   </p>
@@ -437,7 +415,7 @@ pip install django==2.1(특정 버전 설치시)
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2022-01-09T00:00:00+09:00">January 9, 2022</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2022-01-21T00:00:00+09:00">January 21, 2022</time></p>
 
       </footer>
 
@@ -446,23 +424,22 @@ pip install django==2.1(특정 버전 설치시)
     <h4 class="page__share-title">공유하기</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=%EC%9E%A5%EA%B3%A0+%EB%B0%B0%EC%9A%B0%EA%B8%B0+%3A+day1%20https%3A%2F%2Fminthing.github.io%2Fdjango%2Fdjango-day1%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=%EB%A6%AC%EC%97%91%ED%8A%B8+%EA%B3%B5%EB%B6%80+%3A+day+1%20https%3A%2F%2Fminthing.github.io%2Freact%2Freact-day1%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fminthing.github.io%2Fdjango%2Fdjango-day1%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fminthing.github.io%2Freact%2Freact-day1%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fminthing.github.io%2Fdjango%2Fdjango-day1%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fminthing.github.io%2Freact%2Freact-day1%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/howto/how-to-make-a-github-blog-two/" class="pagination--pager" title="깃허브 블로그 만들기 그 험난한 여정 (2) 🛤 - 커스터마이징 및 포스팅 하기
+      <a href="/django/django-day1/" class="pagination--pager" title="장고 배우기 : day1
 ">이전</a>
     
     
-      <a href="/react/react-day1/" class="pagination--pager" title="리엑트 공부 : day 1
-">다음</a>
+      <a href="#" class="pagination--pager disabled">다음</a>
     
   </nav>
 
@@ -486,7 +463,7 @@ pip install django==2.1(특정 버전 설치시)
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/react/react-day1/" rel="permalink">리엑트 공부 : day 1
+        <a href="/django/django-day1/" rel="permalink">장고 배우기 : day1
 </a>
       
     </h2>
@@ -504,15 +481,14 @@ pip install django==2.1(특정 버전 설치시)
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          1 분 소요
+          최대 1 분 소요
         
       </span>
     
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">리엑트란?
-React는 사용자 인터페이스를 구축하기 위한 선언적이고 효율적이며 유연한 JavaScript 라이브러리. 각각의 페이지 요소들을 컴포넌트화 하여 복잡한 코드를 작성하고 관리하는 것을 용이하게 함.
+    <p class="archive__item-excerpt" itemprop="description">가상환경
 </p>
   </article>
 </div>

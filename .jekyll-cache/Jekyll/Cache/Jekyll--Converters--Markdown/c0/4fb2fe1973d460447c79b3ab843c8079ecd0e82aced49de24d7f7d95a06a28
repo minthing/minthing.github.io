@@ -1,0 +1,72 @@
+I"U<h3 id="리엑트란">리엑트란?</h3>
+<p>React는 사용자 인터페이스를 구축하기 위한 선언적이고 효율적이며 유연한 JavaScript 라이브러리. 각각의 페이지 요소들을 컴포넌트화 하여 복잡한 코드를 작성하고 관리하는 것을 용이하게 함.</p>
+
+<h5 id="props와-render">props와 render</h5>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">props</code> : 매게변수. 속성을 나타내는 데이터.</li>
+  <li><code class="language-plaintext highlighter-rouge">render</code> :  화면에서 보고자 하는 내용을 반환 -&gt; <code class="language-plaintext highlighter-rouge">props</code> 및 <code class="language-plaintext highlighter-rouge">state</code>가 변경되었을 때 혹은 부모 컴포넌트가 랜더링 될 때 반환됨</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Welcome</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Hello</span><span class="p">,</span> <span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/h1&gt;</span><span class="err">;
+</span><span class="p">}</span>
+</code></pre></div></div>
+
+<h5 id="jsx">JSX</h5>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">javascript</code> 에 XML을 추가한 추가 확장 문법이다.
+    <ul>
+      <li>React에 엘리먼트를 추가할 수 있게 해주며, 그 형태가 <code class="language-plaintext highlighter-rouge">html</code> 과 유사하여 FE개발자들의 편의를 도모한다.</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">JSX</code> 는 자바스크립트의 공식 문법이 아니다.
+    <ul>
+      <li>브라우저가 실행될 때 때 <code class="language-plaintext highlighter-rouge">babel</code> 을 통해 일반 자바스크립트 문법(<code class="language-plaintext highlighter-rouge">React.createElement</code>)형식으로 변환되어 실행된다. (즉, 바벨 설치가 선행되어야 한다.)</li>
+    </ul>
+  </li>
+  <li>React 개발에 있어 <code class="language-plaintext highlighter-rouge">JSX</code> 의 사용은 필수가 아니다. 다만 자바스크립트 코드 내에서 UI를 개발하는 데 직관성을 높여주는 효과가 있어 많이 사용된다.</li>
+</ul>
+
+<p>JSX의 중괄호 안에는 유효한 모든 <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Expressions_and_Operators#%ED%91%9C%ED%98%84(%EC%8B%9D)">JavaScript 표현식</a>을 넣을 수 있으며, 앨리먼트 내에서도 표현할 수 있다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">formatName</span><span class="p">(</span><span class="nx">user</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">user</span><span class="p">.</span><span class="nx">firstName</span> <span class="o">+</span> <span class="dl">'</span><span class="s1"> </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">user</span><span class="p">.</span><span class="nx">lastName</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">user</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">firstName</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Bruce</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">lastName</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Wayne</span><span class="dl">'</span>
+<span class="p">};</span>
+
+<span class="kd">const</span> <span class="nx">element</span> <span class="o">=</span> <span class="p">(</span>
+  <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span>
+    <span class="nx">Hello</span><span class="p">,</span> <span class="p">{</span><span class="nx">formatName</span><span class="p">(</span><span class="nx">user</span><span class="p">)}</span><span class="o">!</span>
+  <span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
+</span><span class="p">);</span>
+
+<span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span>
+  <span class="nx">element</span><span class="p">,</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">root</span><span class="dl">'</span><span class="p">)</span>
+<span class="p">);</span>
+</code></pre></div></div>
+
+<h3 id="jsx도-표현식이다">JSX도 표현식이다</h3>
+
+<p>jsx도 어쨌든 자바스크립트 문법(비공식)이므로 함수에 포함할 수도 있다. 컴파일이 끝나면, JSX 표현식이 정규 JavaScript 함수 호출이 되고 JavaScript 객체로 인식되기 때문이다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">getGreeting</span><span class="p">(</span><span class="nx">user</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">user</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Hello</span><span class="p">,</span> <span class="p">{</span><span class="nx">formatName</span><span class="p">(</span><span class="nx">user</span><span class="p">)}</span><span class="o">!&lt;</span><span class="sr">/h1&gt;</span><span class="err">;
+</span>  <span class="p">}</span>
+  <span class="k">return</span> <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Hello</span><span class="p">,</span> <span class="nx">Stranger</span><span class="p">.</span><span class="o">&lt;</span><span class="sr">/h1&gt;</span><span class="err">;
+</span><span class="p">}</span>
+</code></pre></div></div>
+
+<h5 id="usestate">useState</h5>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="p">[</span><span class="nx">상태</span> <span class="nx">값</span> <span class="nx">저장</span> <span class="nx">변수</span> <span class="p">,</span> <span class="nx">상태</span> <span class="nx">값</span> <span class="nx">갱신</span> <span class="nx">함수</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="nx">상태</span> <span class="nx">초기</span> <span class="nx">값</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>상태 유지 값과 그 값을 갱신하는 함수를 반환한다.</p>
+:ET

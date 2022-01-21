@@ -22,4 +22,10 @@ var store = [{
         "tags": ["django","python"],
         "url": "/django/django-day1/",
         "teaser": null
+      },{
+        "title": "리엑트 공부 : day 1",
+        "excerpt":"리엑트란? React는 사용자 인터페이스를 구축하기 위한 선언적이고 효율적이며 유연한 JavaScript 라이브러리. 각각의 페이지 요소들을 컴포넌트화 하여 복잡한 코드를 작성하고 관리하는 것을 용이하게 함. props와 render props : 매게변수. 속성을 나타내는 데이터. render : 화면에서 보고자 하는 내용을 반환 -&gt; props 및 state가 변경되었을 때 혹은 부모 컴포넌트가 랜더링 될 때...","categories": ["react"],
+        "tags": ["react"],
+        "url": "/react/react-day1/",
+        "teaser": null
       }]
