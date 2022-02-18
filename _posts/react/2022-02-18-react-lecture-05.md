@@ -52,3 +52,5 @@ function Example() {
   * `shouldComponentUpdate()` : 컴포넌트의 업데이트 유무에 따라 판단을 하는 함수. 특정 데이터의 상태 변화에만 재랜더링이 일어날 수 있도록 조절하게 해줌. 현재의 props와 state를 통해 데이터를 변경할 수 있도록 nextProps와 nextState 인자를 가짐.
   * `componentWillUpdate()`: 컴포넌트가 re-rendering 되기 전에 호출됨. 지금의 props와 state 값이 변한 후 데이터를 작성하고 싶다면 이 함수를 사용. 현재의 props와 state를 통해 데이터를 변경할 수 있도록 nextProps와 nextState 인자를 가짐.
   * `componentDidUpdate()` : 컴포넌트가 완전히 재랜더링 된 후 호출됨. 이 메서드는 prevProps와 prevState를 가짐
+* Unmounting : 컴포넌트 생애 주기의 마지막 단계. DOM으로부터 컴포넌트가 탈착된다.
+  * `componentWillUnmount()` : 컴포넌트가 DOM에서 사라지기 직전의 상태. 
