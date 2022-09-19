@@ -16,11 +16,11 @@ minimal_mistakes_skin    : "dirt" # "air", "aqua", "contrast", "dark", "dirt", "
 
 # Site Settings
 locale                   : "ko-KR"
-title                    : "minthing's blog"
+title                    : "민띵의 개발일지"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "minthing"
-description              : "내가 하는 일이 나를 정의한다 ✨."
+description              : "민띵의 개발일지"
 url                      : "https://minthing.github.io"
 baseurl                  : #/blog
 repository               : "https://github.com/minthing/minthing.github.io"
@@ -102,8 +102,8 @@ analytics:
 # Site Author
 author:
   name             : "minthing"
-  avatar           : "/assets/images/avatar.jpeg"
-  bio              : "💻 & 📖 & ✍️"
+  avatar           : "/assets/images/minthing.jpg"
+  bio              : "💻 개발자는 성장중"
   location         : "korea"
   email            :
   links:

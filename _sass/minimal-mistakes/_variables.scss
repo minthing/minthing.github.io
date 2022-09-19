@@ -44,12 +44,12 @@ $type-size-7: 0.6875em !default; // ~11px
 $type-size-8: 0.625em !default; // ~10px
 
 /* headline scale */
-$h-size-1: 1.563em !default; // ~25.008px
-$h-size-2: 1.25em !default; // ~20px
-$h-size-3: 1.125em !default; // ~18px
-$h-size-4: 1.0625em !default; // ~17px
-$h-size-5: 1.03125em !default; // ~16.5px
-$h-size-6: 1em !default; // ~16px
+$h-size-1: 2.2em !default; // ~25.008px
+$h-size-2: 2.1em !default; // ~20px
+$h-size-3: 2.0em !default; // ~18px
+$h-size-4: 1.9em !default; // ~17px
+$h-size-5: 1.8em !default; // ~16.5px
+$h-size-6: 1.6em !default; // ~16px
 
 /*
    Colors
@@ -62,7 +62,7 @@ $light-gray: mix(#fff, $gray, 50%) !default;
 $lighter-gray: mix(#fff, $gray, 90%) !default;
 
 $background-color: #fff !default;
-$code-background-color: #fafafa !default;
+$code-background-color: linear-gradient(to right, #ff8778, #ffa475, #ffc279, #ffe087, #fffda0) !default;
 $code-background-color-dark: $light-gray !default;
 $text-color: $dark-gray !default;
 $muted-text-color: mix(#fff, $text-color, 20%) !default;

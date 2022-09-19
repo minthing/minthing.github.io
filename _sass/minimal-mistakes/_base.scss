@@ -67,6 +67,26 @@ p {
   margin-bottom: 1.3em;
 }
 
+a{
+  color: #ffb82d;
+}
+
+a:hover{
+  color: #b27f19 !important;
+}
+
+.archive__item-title a{
+  font-size: 1.6rem;
+}
+
+.archive__item-excerpt{
+  font-size: 0.9rem !important;
+}
+
+.list__item:hover{
+  color: #ffb82d;
+}
+
 u,
 ins {
   text-decoration: none;
@@ -167,7 +187,7 @@ figcaption > code,
 td > code {
   padding-top: 0.1rem;
   padding-bottom: 0.1rem;
-  font-size: 0.8em;
+  font-size: 0.9em;
   background: $code-background-color;
   border-radius: $border-radius;
 
