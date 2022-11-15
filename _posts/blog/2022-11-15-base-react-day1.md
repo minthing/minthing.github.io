@@ -633,3 +633,30 @@ const EventFuncPractice = () => {
 
 export default EventFuncPractice;
 ```
+
+📍) 파일의 맨 첫 앞머리는 uppercase가 되어야 한다. 이 규칙을 지키지 않으면 lint 에러가 발생.
+
+### useEffect
+컴포넌트 내부의 값이 변경되었을 때, 화면은 리랜더링 되지만 만일 리랜더링을 매 번 일으키고 싶지 않다면?
+`useEffect`를 사용하면 최초 진입 시 한 번만 랜더하고 다시는 랜더되지 않는다.
+
+```javascript
+  const [counter, setCounter] = useState(0);
+  const onClick = (e) => {
+    setCounter((prev) => prev + 1)
+  }
+
+  console.log('i run all the time'); // 매 번 실행된다
+
+  const onlyOnce = () => {
+    console.log("one time"); // 한 번만 실행됨
+  } 
+  useEffect(onlyOnce, [])
+
+  return(
+    <button onClick={onClick}>{counter}</button>
+  )
+```
+
+🙋‍♀️ ) 따로 파일 넣으면 두 번 실행됨. 아마 다른 컴포넌트와의 통신이라서 그런걸까나...? -> `<React.StrictMode>`를 `index.js`에서 지우면 한 번만 실행된다.
+해결) Strict 모드에선 걍 두 번 실행함. Strict mode checks are run in development mode only; they do not impact the production build. (stackoverflow.com/a/72238236/15288641)
