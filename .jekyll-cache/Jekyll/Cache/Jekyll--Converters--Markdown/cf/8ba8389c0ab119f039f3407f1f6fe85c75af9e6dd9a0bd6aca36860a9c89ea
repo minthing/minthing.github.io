@@ -1,0 +1,426 @@
+I"Ӝ<h1 id="react-기초--1일차">REACT 기초 : 1일차</h1>
+
+<h3 id="리엑트란">리엑트란</h3>
+
+<p>리엑트는 프레임워크가 아닌 라이브러리. 오로지 뷰만을 담당하므로 나머지 부분은 직접 구현해야함.</p>
+
+<h3 id="virtual-dom">virtual dom</h3>
+
+<p>리엑트는 Virtual DOM을 사용한다 -&gt; 큰 규모의 어플리케이션을 다룰 때, DOM을 최소한으로 조작하기 위해서 DOM의 업데이트를 추상화 한다.</p>
+
+<h3 id="적용과정">적용과정</h3>
+
+<ul>
+  <li>데이터가 업데이트 되면 전체 UI를 Virtual DOM에 리랜더링.</li>
+  <li>이전 Virtual DOM에 있던 내용과 현재 내용을 비교.</li>
+  <li>바뀐 부분을 실제 DOM에 적용.</li>
+</ul>
+
+<p>참고 : <a href="https://velog.io/@superlipbalm/blogged-answers-a-mostly-complete-guide-to-react-rendering-behavior">(번역) 블로그 답변: React 렌더링 동작에 대한 (거의) 완벽한 가이드</a></p>
+
+<h3 id="setting">setting</h3>
+
+<ul>
+  <li>note: 노드 버전 14 이상을 요구. -&gt; <del>생각보다 설치가 매우 오래걸림. 예전에 공부할때도 이랬나?</del></li>
+</ul>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">npm</span> <span class="nx">install</span> <span class="o">-</span><span class="nx">g</span> <span class="nx">create</span><span class="o">-</span><span class="nx">react</span><span class="o">-</span><span class="nx">app</span>
+<span class="nx">create</span><span class="o">-</span><span class="nx">react</span><span class="o">-</span><span class="nx">app</span> <span class="nx">my</span><span class="o">-</span><span class="nx">app</span>
+</code></pre></div></div>
+
+<p>Vue 프로젝트가 먼저 포트 3000을 차지하고 있으므로, <code class="language-plaintext highlighter-rouge">package.json</code>을 만져주었다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="dl">"</span><span class="s2">scripts</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">start</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">export PORT=3001 &amp;&amp; react-scripts start</span><span class="dl">"</span><span class="p">,</span>
+	<span class="p">...</span>
+  <span class="p">},</span>
+</code></pre></div></div>
+
+<h3 id="jsx">JSX</h3>
+
+<p>리액트에서는 JSX라는 문법을 사용. 해당 코드는 브라우저에서 실행되기 전 바벨에서 임의로 자바스크립트 형태의 코드로 변환함. -&gt; 가독성과 활용도를 높일 수 있음.</p>
+
+<ul>
+  <li>note: 문법 자체는 Vue와 비슷하다. 최상위 wrapper가 필요하다는 점과 내부에서 조건문 사용하는 방식도 비슷…
+    <ul>
+      <li>리엑트 네이티브 공부할 때 스타일에서 카멜 케이스 쓴 거 리액트 문법이었구나.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="컴포넌트">컴포넌트</h3>
+
+<p>리엑트의 컴포넌트에는 <code class="language-plaintext highlighter-rouge">함수형 컴포넌트</code>와 <code class="language-plaintext highlighter-rouge">클래스형 컴포넌트</code>가 있다.</p>
+
+<h3 id="함수형-컴포넌트의-예시">함수형 컴포넌트의 예시</h3>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Welcome</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Hello, <span class="si">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="class형-컴포넌트의-예시">class형 컴포넌트의 예시</h3>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Welcome</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Hello, <span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="whats-the-difference">what’s the difference?</h3>
+
+<p><strong>함수형 컴포넌트</strong></p>
+
+<ul>
+  <li>선언 하기가 훨씬 편하다.</li>
+  <li>메모리 자원이 비교적 적음. (Remarkable하지는 않음)</li>
+  <li>state 기능 및 라이프 사이클 기능을 사용할 수 없음 -&gt; Hooks라는 기능을 통해 일부 해결됨.</li>
+</ul>
+
+<p><strong>클래스형 컴포넌트</strong></p>
+
+<ul>
+  <li>state 기능 및 라이프 사이클 기능을 사용할 수 있다.</li>
+  <li>임의의 메서드를 정의할 수 있다.</li>
+  <li>랜더 함수가 반드시 존재해야 하며, 그 안에서 보여주어야 할 JSX를 반환해야 한다.</li>
+</ul>
+
+<h3 id="props">props</h3>
+
+<ul>
+  <li>컴포넌트가 사용되는 과정에서 부모 컴포넌트가 설정하는 값.</li>
+  <li>컴포넌트에서는 해당 props를 읽기 전용으로만 사용할 수 있으며, 바꾸기 위해서는 부모 컴포넌트에서 설정해야 한다.</li>
+  <li>MyComponent.js</li>
+</ul>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">MyCompoennt</span> <span class="o">=</span> <span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>안녕 나의 <span class="si">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span> 컴포넌트<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;;</span>
+<span class="p">}</span>
+
+<span class="c1">// 하단에 다음과 같이 default를 지정할 수 있음</span>
+<span class="nx">MyComponent</span><span class="p">.</span><span class="nx">defaultProps</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">리액트</span><span class="dl">'</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">MyCompoennt</span><span class="p">;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>App.js</li>
+</ul>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">MyCompoennt</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./MyComponent</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">&lt;</span><span class="nc">MyCompoennt</span> <span class="na">name</span><span class="p">=</span><span class="s">"react"</span> <span class="p">/&gt;;</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">App</span><span class="p">;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>추가 ) 컴포넌트 태그 사이에 있는 내용을 보여주는 props : children</li>
+  <li>
+    <blockquote>
+      <p>보통 비구조화 할당해서 씀. <del>난 왜 이 용어가 어렵지?</del><code class="language-plaintext highlighter-rouge">const MyCompoennt = ({name, children}) =&gt; {...}</code></p>
+    </blockquote>
+  </li>
+</ul>
+
+<h3 id="propstypes">propsTypes</h3>
+
+<p>필수 props를 지정하거나, 타입을 지정할 때 사용. 코드 상단에 import 해야 함.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">PropsTypes</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">prop-types</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="c1">//...</span>
+
+<span class="nx">MyComponent</span><span class="p">.</span><span class="nx">PropsTypes</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">name</span><span class="p">:</span> <span class="nx">PropsTypes</span><span class="p">.</span><span class="nx">string</span><span class="p">.</span><span class="nx">isRequired</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>다음 과정을 클래스 컴포넌트를 통해 표현하면 다음과 같다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span><span class="nx">React</span><span class="p">,</span> <span class="nx">Component</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">PropTypes</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">prop-types</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nx">MyClassComponent</span> <span class="kd">extends</span> <span class="nx">Component</span><span class="p">{</span>
+  <span class="kd">static</span> <span class="nx">defaultProps</span> <span class="o">=</span><span class="p">{</span>
+    <span class="na">name</span><span class="p">:</span><span class="dl">'</span><span class="s1">class</span><span class="dl">'</span>
+  <span class="p">};</span>
+  <span class="kd">static</span> <span class="nx">propTypes</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">name</span><span class="p">:</span> <span class="nx">PropTypes</span><span class="p">.</span><span class="nx">string</span><span class="p">,</span>
+  <span class="p">};</span>
+  <span class="nx">render</span><span class="p">(){</span>
+    <span class="kd">const</span> <span class="p">{</span><span class="nx">name</span><span class="p">,</span> <span class="nx">favoriteNumber</span><span class="p">,</span> <span class="nx">children</span><span class="p">}</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">;</span>
+    <span class="k">return</span> <span class="p">(&lt;</span><span class="nt">div</span><span class="p">&gt;</span>안녕 나의 <span class="si">{</span><span class="nx">name</span><span class="si">}</span> 컴포넌트<span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span><span class="si">{</span><span class="nx">children</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">MyClassComponent</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h3 id="state">state</h3>
+
+<ul>
+  <li>컴포넌트 내부에서 바뀔 수 있는 값.</li>
+  <li>constructor라는 컴포넌트 생성자를 통해 state의 초깃값을 생성하며, <code class="language-plaintext highlighter-rouge">super(props)</code>를 반드시 호출해 주어야 한다.</li>
+  <li>render 함수에서 state를 조회할 때는 <code class="language-plaintext highlighter-rouge">this.state</code>를 통해 조회하면 된다.</li>
+  <li>state의 값을 변환시키고 싶을 때는 <code class="language-plaintext highlighter-rouge">this.setState</code>를 사용한다 -&gt; 내부에서 참조한 값만을 변화시킨다.</li>
+</ul>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Counter.js</span>
+<span class="k">import</span> <span class="p">{</span><span class="nx">React</span><span class="p">,</span> <span class="nx">Component</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nx">Counter</span> <span class="kd">extends</span> <span class="nx">Component</span><span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">props</span><span class="p">){</span>
+<span class="c1">// 컴포넌트 생성자 메서드</span>
+    <span class="k">super</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="o">=</span><span class="p">{</span>
+      <span class="na">number</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="na">fixedNumber</span><span class="p">:</span><span class="mi">0</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="nx">render</span><span class="p">(){</span>
+    <span class="kd">const</span> <span class="p">{</span><span class="nx">number</span><span class="p">,</span> <span class="nx">fixedNumber</span><span class="p">}</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">;</span>
+    <span class="k">return</span><span class="p">(</span>
+      <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">number</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">fixedNumber</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span> <span class="p">=</span> <span class="si">{</span><span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+          <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span><span class="na">number</span><span class="p">:</span> <span class="nx">number</span> <span class="o">+</span> <span class="mi">1</span><span class="p">})</span>
+        <span class="p">}</span><span class="si">}</span><span class="p">&gt;</span>Click ME!<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">Counter</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h3 id="better-way">better way</h3>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span><span class="nx">React</span><span class="p">,</span> <span class="nx">Component</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nx">Counter</span> <span class="kd">extends</span> <span class="nx">Component</span><span class="p">{</span>
+
+  <span class="nx">state</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">number</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+    <span class="na">fixedNumber</span><span class="p">:</span><span class="mi">0</span>
+  <span class="p">}</span>
+
+  <span class="nx">render</span><span class="p">(){</span>
+    <span class="kd">const</span> <span class="p">{</span><span class="nx">number</span><span class="p">,</span> <span class="nx">fixedNumber</span><span class="p">}</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">;</span>
+    <span class="k">return</span><span class="p">(</span>
+      <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">number</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">fixedNumber</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span> <span class="p">=</span> <span class="si">{</span><span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+          <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span><span class="na">number</span><span class="p">:</span> <span class="nx">number</span> <span class="o">+</span> <span class="mi">1</span><span class="p">})</span>
+        <span class="p">}</span><span class="si">}</span><span class="p">&gt;</span>Click ME!<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">Counter</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h3 id="setstate-좀-더-알아보기">setState 좀 더 알아보기</h3>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">this.setState</code> 를 통해 값을 업데이트 시킬 때는 상태가 비동기적으로 업데이트 된다. -&gt; onClick 내에 setState를 두 번 호출해도 값은 1번 호출할 때와 동일하게 바뀐다.</li>
+  <li>해결 : <strong>객체 대신 인자로</strong> 넣어준다.
+    <ul>
+      <li>prevState: 지난 상태</li>
+      <li>props는 현재 지니고 있는 상태를 나타낸다.</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span><span class="nx">prevState</span><span class="p">,</span> <span class="nx">props</span><span class="p">}</span><span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">{</span> <span class="c1">//...}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<p><strong>적용 시</strong></p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span><span class="nx">React</span><span class="p">,</span> <span class="nx">Component</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nx">Counter</span> <span class="kd">extends</span> <span class="nx">Component</span><span class="p">{</span>
+
+  <span class="nx">state</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">number</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+    <span class="na">fixedNumber</span><span class="p">:</span><span class="mi">0</span>
+  <span class="p">}</span>
+
+  <span class="nx">render</span><span class="p">(){</span>
+    <span class="kd">const</span> <span class="p">{</span><span class="nx">number</span><span class="p">,</span> <span class="nx">fixedNumber</span><span class="p">}</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">;</span>
+    <span class="k">return</span><span class="p">(</span>
+      <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">number</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">fixedNumber</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+        <span class="si">{</span><span class="cm">/* &lt;button onClick = {() =&gt; {
+          this.setState({number: number + 1})
+        }}&gt;Click ME!&lt;/button&gt; */</span><span class="si">}</span>
+        <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span> <span class="p">=</span> <span class="si">{</span><span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+          <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">(</span><span class="nx">prevState</span> <span class="o">=&gt;</span> <span class="p">({</span><span class="na">number</span><span class="p">:</span> <span class="nx">prevState</span><span class="p">.</span><span class="nx">number</span> <span class="o">+</span> <span class="mi">1</span><span class="p">}))</span>
+          <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">(</span><span class="nx">prevState</span> <span class="o">=&gt;</span> <span class="p">({</span><span class="na">number</span><span class="p">:</span> <span class="nx">prevState</span><span class="p">.</span><span class="nx">number</span> <span class="o">+</span> <span class="mi">1</span><span class="p">}))</span>
+        <span class="p">}</span><span class="si">}</span><span class="p">&gt;</span>Click ME!<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">Counter</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h3 id="callback">callback</h3>
+
+<p>setState를 통해 값을 업데이트 한 후 특정 작업을 시행하고 싶을 때, 두번째 파라미터르 callback 함수를 등록하면 된다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span><span class="nx">React</span><span class="p">,</span> <span class="nx">Component</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nx">Counter</span> <span class="kd">extends</span> <span class="nx">Component</span><span class="p">{</span>
+
+  <span class="nx">state</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">number</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+    <span class="na">fixedNumber</span><span class="p">:</span><span class="mi">0</span>
+  <span class="p">}</span>
+
+  <span class="nx">render</span><span class="p">(){</span>
+    <span class="kd">const</span> <span class="p">{</span><span class="nx">number</span><span class="p">,</span> <span class="nx">fixedNumber</span><span class="p">}</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">;</span>
+    <span class="k">return</span><span class="p">(</span>
+      <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">number</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">fixedNumber</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+        <span class="si">{</span><span class="cm">/* &lt;button onClick = {() =&gt; {
+          this.setState({number: number + 1})
+        }}&gt;Click ME!&lt;/button&gt; */</span><span class="si">}</span>
+        <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span> <span class="p">=</span> <span class="si">{</span><span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+          <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">(</span>
+            <span class="nx">prevState</span> <span class="o">=&gt;</span> <span class="p">(</span>
+              <span class="p">{</span><span class="na">number</span><span class="p">:</span> <span class="nx">prevState</span><span class="p">.</span><span class="nx">number</span> <span class="o">+</span> <span class="mi">1</span><span class="p">}</span>
+              <span class="p">),</span>
+              <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+                <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">state가 호출되었습니다.</span><span class="dl">'</span><span class="p">);</span>
+                <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">)</span>
+              <span class="p">}</span>
+            <span class="p">)</span>
+        <span class="p">}</span><span class="si">}</span><span class="p">&gt;</span>Click ME!<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">Counter</span><span class="p">;</span>
+
+</code></pre></div></div>
+
+<h3 id="함수-컴포넌트에서의-usestate">함수 컴포넌트에서의 useState</h3>
+
+<p>함수 컴포넌트에서는 useState라는 함수를 불러와  사용한다.</p>
+
+<ul>
+  <li>useState 함수의 인자에는 상태의 초깃값을 넣어준다. 반드시 객체일 필요는 없고 숫자, 문자열, 객체, 배열 등등 가능.</li>
+</ul>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span><span class="nx">useState</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">Say</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">message</span><span class="p">,</span> <span class="nx">setMessage</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="dl">''</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">onClickEnter</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">setMessage</span><span class="p">(</span><span class="dl">'</span><span class="s1">hello</span><span class="dl">'</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="kd">const</span> <span class="nx">onClickLeave</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">setMessage</span><span class="p">(</span><span class="dl">'</span><span class="s1">bye</span><span class="dl">'</span><span class="p">)</span>
+  <span class="p">}</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">color</span><span class="p">,</span> <span class="nx">setColor</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="dl">'</span><span class="s1">black</span><span class="dl">'</span><span class="p">);</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span> <span class="p">=</span> <span class="si">{</span><span class="nx">onClickEnter</span><span class="si">}</span><span class="p">&gt;</span>입장<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span> <span class="p">=</span> <span class="si">{</span><span class="nx">onClickLeave</span><span class="si">}</span><span class="p">&gt;</span>퇴장<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">h1</span> <span class="na">style</span><span class="p">=&gt;</span><span class="si">{</span><span class="nx">message</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="p">=</span><span class="si">{</span><span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">setColor</span><span class="p">(</span><span class="dl">'</span><span class="s1">green</span><span class="dl">'</span><span class="p">)</span><span class="si">}</span><span class="p">&gt;</span>green<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="p">=</span><span class="si">{</span><span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">setColor</span><span class="p">(</span><span class="dl">'</span><span class="s1">blue</span><span class="dl">'</span><span class="p">)</span><span class="si">}</span><span class="p">&gt;</span>blue<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">)</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">Say</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h3 id="state를-사용할-때의-주의">state를 사용할 때의 주의</h3>
+
+<ul>
+  <li>state의 값을 바꿔야 할 때는 setState 혹은 useState를 통해 전달받은 세터 함수를 사용해야 한다.</li>
+  <li>배열이나 객체를 업데이트 해야 할 때 -&gt; 배열이나 객체의 사본을 만들고 그것을 setState 혹은 세터 함수를 통해 업데이트
+    <ul>
+      <li>리액트에서는 state 의 변경을 감지하고, 변경된 부분을 리렌더링을 하는데 setState (또는 useState 의 세터 함수)를 사용하지 않고 직접 state 값을수정할 경우 변경을 감지하지 못하기 때문</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>잘못된 예시</strong></p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 클래스형 컴포넌트</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">number</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">number</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">array</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">array</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">object</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="c1">// 함수형 컴포넌트</span>
+<span class="kd">const</span> <span class="p">[</span><span class="nx">object</span><span class="p">,</span> <span class="nx">setObject</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">({</span><span class="na">a</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="na">b</span><span class="p">:</span> <span class="mi">1</span><span class="p">});</span>
+<span class="nx">object</span><span class="p">.</span><span class="nx">b</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+</code></pre></div></div>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="c1">// 사본을 만들어서 업데이트</span>
+
+<span class="kd">const</span> <span class="nx">object</span> <span class="o">=</span> <span class="p">{</span><span class="na">a</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="na">b</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="na">c</span><span class="p">:</span> <span class="mi">3</span><span class="p">};</span>
+<span class="kd">const</span> <span class="nx">nextObject</span> <span class="o">=</span> <span class="p">{...</span><span class="nx">object</span><span class="p">,</span> <span class="na">b</span><span class="p">:</span> <span class="mi">2</span><span class="p">};</span>
+<span class="c1">// {...object}를 활용해서 새로운 객체를 만들고 b를 덮어쓰고 있음.</span>
+
+<span class="c1">// 배열 다루기</span>
+<span class="kd">const</span> <span class="nx">array</span> <span class="o">=</span> <span class="p">[</span>
+	<span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="kc">true</span> <span class="p">},</span>
+	<span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="kc">true</span> <span class="p">},</span>
+	<span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="kc">false</span><span class="p">}</span>
+<span class="p">];</span>
+<span class="kd">let</span> <span class="nx">nextArray</span> <span class="o">=</span> <span class="nx">array</span><span class="p">.</span><span class="nx">concat</span><span class="p">({</span> <span class="na">id</span><span class="p">:</span> <span class="mi">4</span> <span class="p">});</span>
+<span class="c1">// 새 항목 추가 concat -&gt; 인자로 주어진 배열이나 값들을 기존 배열에 합쳐서 새 배열을 반환</span>
+<span class="nx">nextArray</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">item</span> <span class="o">=&gt;</span> <span class="nx">item</span><span class="p">.</span><span class="nx">id</span> <span class="o">!==</span> <span class="mi">2</span><span class="p">);</span> <span class="c1">// id가 2인 항목 제거</span>
+<span class="nx">nextArray</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">item</span> <span class="o">=&gt;</span> <span class="p">(</span><span class="nx">item</span><span class="p">.</span><span class="nx">id</span> <span class="o">===</span> <span class="mi">1</span> <span class="p">?</span> <span class="p">{</span> <span class="p">...</span><span class="nx">item</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="kc">false</span> <span class="p">}</span> <span class="p">:</span> <span class="nx">item</span><span class="p">));</span>
+<span class="c1">// id가 1인 항목의 value를 false로 변환, 사본을 만든다는 점은 위와 같음</span>
+
+<span class="p">{</span><span class="cm">/*
+	객체에 대한 사본을 만들 때는 spread 연산자라 불리는 ...을 사용하여 처리하고,
+	배열에 대한 사본을 만들 때는 배열의 내장 함수들을 활용함.
+*}
+</span></code></pre></div></div>
+
+<h3 id="리액트의-이벤트-시스템">리액트의 이벤트 시스템</h3>
+<ul>
+  <li>DOM 요소에만 이벤트를 설정할 수 있다. -&gt; 컴포넌트에 직접 이벤트를 건다면, 그것은 이벤트를 컴포넌트에 전달해 줄 뿐이다.</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span><span class="nx">Component</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nx">EventPractice</span> <span class="kd">extends</span> <span class="nx">Component</span><span class="p">{</span>
+  <span class="nx">render</span><span class="p">(){</span>
+    <span class="k">return</span><span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="kd">let</span><span class="dl">'</span><span class="s1">s practice event!&lt;/h1&gt;
+        &lt;input type="text" name="message" placeholder=</span><span class="dl">'</span><span class="nx">write</span> <span class="nx">something</span><span class="p">...</span><span class="dl">'</span><span class="s1"> onChange={(e) =&gt; {console.log(e)}} /&gt;
+      &lt;/div&gt;
+    )
+  }
+}
+
+export default EventPractice;
+</span></code></pre></div></div>
+
+:ET

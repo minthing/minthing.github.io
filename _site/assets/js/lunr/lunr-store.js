@@ -4,4 +4,10 @@ var store = [{
         "tags": ["blog"],
         "url": "/blog/how-to-make-a-github-blog-first/",
         "teaser": null
+      },{
+        "title": "REACT 기초 다시 정리 : 1일차",
+        "excerpt":"REACT 기초 : 1일차 리엑트란 리엑트는 프레임워크가 아닌 라이브러리. 오로지 뷰만을 담당하므로 나머지 부분은 직접 구현해야함. virtual dom 리엑트는 Virtual DOM을 사용한다 -&gt; 큰 규모의 어플리케이션을 다룰 때, DOM을 최소한으로 조작하기 위해서 DOM의 업데이트를 추상화 한다. 적용과정 데이터가 업데이트 되면 전체 UI를 Virtual DOM에 리랜더링. 이전 Virtual DOM에 있던 내용과...","categories": ["react"],
+        "tags": ["react","basic"],
+        "url": "/react/base-react-day1/",
+        "teaser": null
       }]

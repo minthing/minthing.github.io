@@ -10,10 +10,12 @@ toc: true
 <div class="wrap_img" style="text-align:center;margin-bottom:60px"><img src="../assets/images/minthing.jpg" height="150px" width="150px" style="border-radius:50%"></div>
 
 
-프론트앤드 개발자 `minthing`입니다! 인터렉티브와 Vue.js 생태계에 큰 관심이 있으며 2022년 현재, 올 해 목표는 사이드 프로젝트와 정돈된 개발 문서 작성하기 입니다.
+front-end developer who deeply interested in `React`, `RN` and `Interactive Web`.
+experienced with Nuxt.js, Node, graphQL, RestJS and Three.js technologies.
 
-###### 해 온 일
+### personal projects
+[codepen](https://codepen.io/minthing/) | [frontend mentor](https://www.frontendmentor.io/profile/minthing)
 
-###### 사이드 프로젝트
-
-###### 개발자의 사이드 허슬은 개발이 아니다
+### soft skills
+* fluent at 🇰🇷 & 🇬🇧 & 🇯🇵
+* published some books about [dev skills](https://ridibooks.com/author/103444)
