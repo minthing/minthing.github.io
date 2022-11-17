@@ -10,4 +10,10 @@ var store = [{
         "tags": ["react","basic"],
         "url": "/react/base-react-day1/",
         "teaser": null
+      },{
+        "title": "REACT 기초 다시 정리 : 2일차",
+        "excerpt":"REACT 기초 : 2일차 ref html에서 id를 사용하듯이, 리액트 내부에서 DOM에 이름을 다는 방법. state만으로는 해결할 수 없는, DOM을 꼭 직접적으로 건들여야 할 때 사용한다. 포커스, 텍스트 선택영역, 혹은 미디어의 재생을 관리할 때. 애니메이션을 직접적으로 실행시킬 때. 서드 파티 DOM 라이브러리를 React와 같이 사용할 때. 전역적으로 작동하지 않고 컴포넌트 내부에서만...","categories": ["react"],
+        "tags": ["react","basic"],
+        "url": "/react/base-react-day2/",
+        "teaser": null
       }]

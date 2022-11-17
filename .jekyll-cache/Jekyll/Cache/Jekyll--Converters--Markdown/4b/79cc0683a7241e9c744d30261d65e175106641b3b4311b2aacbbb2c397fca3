@@ -1,0 +1,445 @@
+I"�<h1 id="react-기초--2일차">REACT 기초 : 2일차</h1>
+
+<h3 id="ref">ref</h3>
+<ul>
+  <li>html에서 <code class="language-plaintext highlighter-rouge">id를 사용하듯이</code>, 리액트 내부에서 DOM에 이름을 다는 방법. state만으로는 해결할 수 없는, DOM을 꼭 직접적으로 건들여야 할 때 사용한다.
+    <ul>
+      <li>포커스, 텍스트 선택영역, 혹은 미디어의 재생을 관리할 때.</li>
+      <li>애니메이션을 직접적으로 실행시킬 때.</li>
+      <li>서드 파티 DOM 라이브러리를 React와 같이 사용할 때.</li>
+    </ul>
+  </li>
+  <li>전역적으로 작동하지 않고 컴포넌트 내부에서만 작동하기 때문에 중복 id 생성과 같은 이슈에서 자유롭다.</li>
+  <li>
+    <ul>
+      <li>함수 컴포넌트는 인스턴스가 없기 때문에 <strong>함수 컴포넌트에 ref 어트리뷰트를 사용할 수 없음</strong>.</li>
+    </ul>
+  </li>
+  <li>함수 컴포넌트에 ref를 사용할 수 있도록 하려면,  <a href="https://ko.reactjs.org/docs/forwarding-refs.html">forwardRef</a>  (높은 확률로  <a href="https://ko.reactjs.org/docs/hooks-reference.html#useimperativehandle">useImperativeHandle</a> 와 함께)를 사용하거나 클래스 컴포넌트로 변경할 수 있음.</li>
+</ul>
+
+<h6 id="callback-함수를-활용한-방법">callback 함수를 활용한 방법</h6>
+<ul>
+  <li>ref를 달고자 하는 요소에 ref라는 callback 함수를 props로 전달. 이 콜백 함수는 ref 값을 파라미터로 전달 받음.</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">input</span> <span class="nx">ref</span> <span class="o">=</span> <span class="p">{(</span><span class="nx">ref</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">input</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">}}</span> <span class="sr">/</span><span class="err">&gt;
+</span><span class="c1">// this.input은 unput 요소의 DOM으로 지정됨.</span>
+</code></pre></div></div>
+
+<h6 id="createref를-통한-설정">createRef를 통한 설정</h6>
+
+<ul>
+  <li>16 이후 버전부터는 다음과 같은 방법을 통해서 만들라고 함.</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span><span class="nx">Component</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nx">RefSample</span> <span class="kd">extends</span> <span class="nx">Component</span><span class="p">{</span>
+  <span class="nx">input</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createRef</span><span class="p">();</span> <span class="c1">// ref props 달기</span>
+
+  <span class="nx">handleFocus</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">input</span><span class="p">.</span><span class="nx">current</span><span class="p">.</span><span class="nx">focus</span><span class="p">();</span>
+  <span class="p">}</span>
+
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span><span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">ref</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">input</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>    <span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">RefSample</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h6 id="컴포넌트에서-ref-사용하기">컴포넌트에서 ref 사용하기</h6>
+
+<p><strong>check</strong></p>
+<ul>
+  <li>clientHeight 는 요소의 내부 높이입니다. 패딩 값은 포함되며, 스크롤바, 테두리, 마진은 제외됩니다.</li>
+  <li>offsetHeight 는 요소의 높이입니다. 패딩, 스크롤 바, 테두리(Border)가 포함됩니다. 마진은 제외됩니다.</li>
+  <li>scrollHeight  는 요소에 들어있는 컨텐츠의 전체 높이입니다. 패딩과 테두리가 포함됩니다. 마진은 제외됩니다.</li>
+</ul>
+
+<p>https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F9940E34F5EE2947508</p>
+
+<p><strong>scrollBox.js</strong></p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span><span class="nx">Component</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nx">ScrollBox</span> <span class="kd">extends</span> <span class="nx">Component</span><span class="p">{</span>
+
+  <span class="nx">scrollToBottom</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="p">{</span><span class="nx">scrollHeight</span><span class="p">,</span> <span class="nx">clientHeight</span><span class="p">}</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">box</span><span class="p">;</span>
+
+    <span class="c1">// 위 구조분해 할당 코드와 동일한 코드</span>
+    <span class="c1">// const scrollHeight = this.box.scrollHeight;</span>
+    <span class="c1">// const clientHeight = this.box.clientHeight;</span>
+
+    <span class="k">this</span><span class="p">.</span><span class="nx">box</span><span class="p">.</span><span class="nx">scrollTop</span> <span class="o">=</span> <span class="nx">scrollHeight</span> <span class="o">-</span> <span class="nx">clientHeight</span><span class="p">;</span>
+  <span class="p">}</span>
+
+
+  <span class="nx">render</span><span class="p">(){</span>
+    <span class="kd">const</span> <span class="nx">style</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="na">border</span><span class="p">:</span><span class="dl">'</span><span class="s1">1px solid black</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">height</span><span class="p">:</span><span class="dl">'</span><span class="s1">300px</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">width</span><span class="p">:</span><span class="dl">'</span><span class="s1">300px</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">overflow</span><span class="p">:</span><span class="dl">'</span><span class="s1">auto</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">position</span><span class="p">:</span><span class="dl">'</span><span class="s1">relative</span><span class="dl">'</span>
+    <span class="p">}</span>
+
+    <span class="kd">const</span> <span class="nx">innerStyle</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="na">width</span><span class="p">:</span> <span class="dl">'</span><span class="s1">100%</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">height</span><span class="p">:</span><span class="dl">'</span><span class="s1">650px</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">background</span><span class="p">:</span><span class="dl">'</span><span class="s1">linear-gradient(white, black)</span><span class="dl">'</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span><span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">style</span><span class="o">=</span><span class="p">{</span><span class="nx">style</span><span class="p">}</span> <span class="nx">ref</span><span class="o">=</span><span class="p">{(</span><span class="nx">ref</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">box</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">}}</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">style</span><span class="o">=</span><span class="p">{</span><span class="nx">innerStyle</span><span class="p">}</span><span class="o">&gt;&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>    <span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">ScrollBox</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p><strong>App.js</strong></p>
+<ul>
+  <li>클래스형으로 변경한 줄도 모르고 개삽질함
+```javascript
+import React, { Component } from “react”;
+import ScrollBox from “./ScrollBox”;</li>
+</ul>
+
+<p>class App extends Component {
+  // return <MyClassComponent>헬로우</MyClassComponent>;
+  render(){
+    return (
+      &lt;div&gt;
+        &lt;ScrollBox ref={(ref) =&gt; (this.scrollBox = ref)} /&gt;
+        &lt;button onClick={() =&gt; this.scrollBox.scrollToBottom()}&gt;to bottom&lt;/button&gt;
+      &lt;/div&gt;
+    );
+  }
+}</p>
+
+<p>export default App;</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+
+###### conclusion
+컴포넌트 내부에서 DOM에 직접 접근해야 할 때는 ref를 사용한다. 단 ref를 사용하지 않고는 도저히 기능 구현이 어렵다고 판단될 때만 사용하는 것이 좋다고 강조 또 강조됨.
+
+### 컴포넌트 반복
+###### map함수
+* 배열 내의 모든 요소 각각에 대하여 주어진 함수를 호출한 결과를 모아 새로운 배열을 반환함
+```javascript
+const array1 = [1, 4, 9, 16];
+
+// pass a function to map
+const map1 = array1.map(x =&gt; x * 2);
+
+console.log(map1);
+// expected output: Array [2, 8, 18, 32]
+</code></pre></div></div>
+
+<p>vue와 동일하게, 고유한 key 값을 넣어주어야 한다. -&gt; 컴포넌트 배열이 랜더링 되었을 때 어떤 원소에 변경이 생겼는지 알아내기 위해 사용.</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">IterationSample</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">names</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">mina</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">sana</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">momo</span><span class="dl">'</span><span class="p">];</span>
+  <span class="kd">const</span> <span class="nx">nameList</span> <span class="o">=</span> <span class="nx">names</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">name</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="nx">li</span> <span class="nx">key</span><span class="o">=</span><span class="p">{</span><span class="nx">index</span><span class="p">}</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">name</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/li&gt;</span><span class="err">)
+</span>  <span class="k">return</span> <span class="o">&lt;</span><span class="nx">ul</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">nameList</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/ul</span><span class="err">&gt;
+</span><span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">IterationSample</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h6 id="데이터-추가-기능의-구현">데이터 추가 기능의 구현</h6>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span><span class="nx">useState</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">IterationSample</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">names</span><span class="p">,</span> <span class="nx">setNames</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">([</span>
+    <span class="p">{</span><span class="na">id</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="na">text</span><span class="p">:</span><span class="dl">'</span><span class="s1">사나</span><span class="dl">'</span><span class="p">},</span>
+    <span class="p">{</span><span class="na">id</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="na">text</span><span class="p">:</span><span class="dl">'</span><span class="s1">미나</span><span class="dl">'</span><span class="p">},</span>
+    <span class="p">{</span><span class="na">id</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span> <span class="na">text</span><span class="p">:</span><span class="dl">'</span><span class="s1">모모</span><span class="dl">'</span><span class="p">}</span>
+  <span class="p">]);</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">inputText</span><span class="p">,</span> <span class="nx">setInputText</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="dl">''</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">nextId</span><span class="p">,</span> <span class="nx">setNextId</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+
+  <span class="kd">const</span> <span class="nx">onChange</span> <span class="o">=</span> <span class="nx">e</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// 키보드에 입력한 값!</span>
+    <span class="nx">setInputText</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="kd">const</span> <span class="nx">onClick</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// 새로운 object를 넣은 배열을 반환</span>
+    <span class="kd">const</span> <span class="nx">nextNames</span> <span class="o">=</span> <span class="nx">names</span><span class="p">.</span><span class="nx">concat</span><span class="p">({</span>
+      <span class="na">id</span><span class="p">:</span><span class="nx">nextId</span><span class="p">,</span>
+      <span class="na">text</span><span class="p">:</span><span class="nx">inputText</span>
+    <span class="p">})</span>
+    <span class="c1">// key값을 하나 늘려줌</span>
+    <span class="nx">setNextId</span><span class="p">(</span><span class="nx">nextId</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="c1">// names 배열을 방금 concat을 통해 만든 배열로 바꿔치기</span>
+    <span class="nx">setNames</span><span class="p">(</span><span class="nx">nextNames</span><span class="p">);</span>
+    <span class="nx">setInputText</span><span class="p">(</span><span class="dl">''</span><span class="p">)</span>
+  <span class="p">}</span>
+
+  <span class="kd">const</span> <span class="nx">nameList</span> <span class="o">=</span> <span class="nx">names</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">name</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="nx">li</span> <span class="nx">key</span><span class="o">=</span><span class="p">{</span><span class="nx">name</span><span class="p">.</span><span class="nx">id</span><span class="p">}</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">name</span><span class="p">.</span><span class="nx">text</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/li&gt;</span><span class="err">)
+</span>  <span class="k">return</span> <span class="p">(</span><span class="o">&lt;&gt;</span>
+  <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">inputText</span><span class="p">}</span> <span class="nx">onChange</span><span class="o">=</span><span class="p">{</span><span class="nx">onChange</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>  <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">onClick</span><span class="p">}</span><span class="o">&gt;</span><span class="nx">추가</span><span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>  <span class="o">&lt;</span><span class="nx">ul</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">nameList</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/ul</span><span class="err">&gt;
+</span>  <span class="o">&lt;</span><span class="sr">/</span><span class="err">&gt;
+</span>  <span class="p">)</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">IterationSample</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h6 id="filter">filter</h6>
+<p>뭘 하든 <code class="language-plaintext highlighter-rouge">불변성을 유지하면서 업데이트</code>를 해주어야 한다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">words</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">spray</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">limit</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">elite</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">exuberant</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">destruction</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">present</span><span class="dl">'</span><span class="p">];</span>
+
+<span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">words</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">word</span> <span class="o">=&gt;</span> <span class="nx">word</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">6</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+<span class="c1">// expected output: Array ["exuberant", "destruction", "present"]</span>
+</code></pre></div></div>
+
+<h6 id="filter를-활용한-삭제-기능-구현">filter를 활용한 삭제 기능 구현</h6>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span><span class="nx">useState</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">IterationSample</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">names</span><span class="p">,</span> <span class="nx">setNames</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">([</span>
+    <span class="p">{</span><span class="na">id</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="na">text</span><span class="p">:</span><span class="dl">'</span><span class="s1">사나</span><span class="dl">'</span><span class="p">},</span>
+    <span class="p">{</span><span class="na">id</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="na">text</span><span class="p">:</span><span class="dl">'</span><span class="s1">미나</span><span class="dl">'</span><span class="p">},</span>
+    <span class="p">{</span><span class="na">id</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span> <span class="na">text</span><span class="p">:</span><span class="dl">'</span><span class="s1">모모</span><span class="dl">'</span><span class="p">}</span>
+  <span class="p">]);</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">inputText</span><span class="p">,</span> <span class="nx">setInputText</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="dl">''</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">nextId</span><span class="p">,</span> <span class="nx">setNextId</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+
+  <span class="kd">const</span> <span class="nx">onChange</span> <span class="o">=</span> <span class="nx">e</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// 키보드에 입력한 값!</span>
+    <span class="nx">setInputText</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="kd">const</span> <span class="nx">onClick</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// 새로운 object를 넣은 배열을 반환</span>
+    <span class="kd">const</span> <span class="nx">nextNames</span> <span class="o">=</span> <span class="nx">names</span><span class="p">.</span><span class="nx">concat</span><span class="p">({</span>
+      <span class="na">id</span><span class="p">:</span><span class="nx">nextId</span><span class="p">,</span>
+      <span class="na">text</span><span class="p">:</span><span class="nx">inputText</span>
+    <span class="p">})</span>
+    <span class="c1">// key값을 하나 늘려줌</span>
+    <span class="nx">setNextId</span><span class="p">(</span><span class="nx">nextId</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="c1">// names 배열을 방금 concat을 통해 만든 배열로 바꿔치기</span>
+    <span class="nx">setNames</span><span class="p">(</span><span class="nx">nextNames</span><span class="p">);</span>
+    <span class="nx">setInputText</span><span class="p">(</span><span class="dl">''</span><span class="p">)</span>
+  <span class="p">}</span>
+
+  <span class="kd">const</span> <span class="nx">onRemove</span> <span class="o">=</span> <span class="nx">id</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">nextNames</span> <span class="o">=</span> <span class="nx">names</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">name</span> <span class="o">=&gt;</span> <span class="nx">name</span><span class="p">.</span><span class="nx">id</span> <span class="o">!==</span> <span class="nx">id</span><span class="p">);</span>
+    <span class="nx">setNames</span><span class="p">(</span><span class="nx">nextNames</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="kd">const</span> <span class="nx">nameList</span> <span class="o">=</span> <span class="nx">names</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">name</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="nx">li</span> <span class="nx">key</span><span class="o">=</span><span class="p">{</span><span class="nx">name</span><span class="p">.</span><span class="nx">id</span><span class="p">}</span> <span class="nx">onDoubleClick</span><span class="o">=</span><span class="p">{()</span><span class="o">=&gt;</span><span class="p">{</span><span class="nx">onRemove</span><span class="p">(</span><span class="nx">name</span><span class="p">.</span><span class="nx">id</span><span class="p">)}}</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">name</span><span class="p">.</span><span class="nx">text</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/li&gt;</span><span class="err">)
+</span>  <span class="k">return</span> <span class="p">(</span><span class="o">&lt;&gt;</span>
+  <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">inputText</span><span class="p">}</span> <span class="nx">onChange</span><span class="o">=</span><span class="p">{</span><span class="nx">onChange</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>  <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">onClick</span><span class="p">}</span><span class="o">&gt;</span><span class="nx">추가</span><span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>  <span class="o">&lt;</span><span class="nx">ul</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">nameList</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/ul</span><span class="err">&gt;
+</span>  <span class="o">&lt;</span><span class="sr">/</span><span class="err">&gt;
+</span>  <span class="p">)</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">IterationSample</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h3 id="라이프-사이클">라이프 사이클</h3>
+<p>📍 참고자료 :  <a href="https://react.vlpt.us/basic/25-lifecycle.html">25. LifeCycle Method · GitBook</a></p>
+<h5 id="mount">mount</h5>
+<p><code class="language-plaintext highlighter-rouge">mount</code> : DOM이 생성되고 웹 브라우저 상에 나타나는 상태.</p>
+<h6 id="mount에서의-라이프-사이클-메서드">mount에서의 라이프 사이클 메서드</h6>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">constructor</code> : 컴포넌트를 새로 만들 때마다 호출되는 클래스 생성자, 초기 <code class="language-plaintext highlighter-rouge">state</code>를 정할 수 있다.
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">constructor</span><span class="p">(</span><span class="nx">props</span><span class="p">){...}</span>
+</code></pre></div>    </div>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">getDerivedStateFromProps</code>:prop에 있는 값을 state에 넣을 때(동기화) 사용하는 메서드
+    <ul>
+      <li>다른 생명주기 메서드와는 달리 앞에 static 을 필요로 하고, 이 안에서는 this 롤 조회 할 수 없음.</li>
+      <li>특정 객체를 반환하게 되면 해당 객체 안에 있는 내용들이 컴포넌트의 state 로 설정이 됨.</li>
+      <li>null 을 반환하게 되면 아무 일도 발생하지 않습니다.
+        <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">static</span> <span class="nx">getDerivedStateFromProps</span><span class="p">(</span><span class="nx">nextProps</span><span class="p">,</span> <span class="nx">prevState</span><span class="p">)</span> <span class="p">{</span>
+ <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">getDerivedStateFromProps</span><span class="dl">"</span><span class="p">);</span>
+ <span class="k">if</span> <span class="p">(</span><span class="nx">nextProps</span><span class="p">.</span><span class="nx">color</span> <span class="o">!==</span> <span class="nx">prevState</span><span class="p">.</span><span class="nx">color</span><span class="p">)</span> <span class="p">{</span>
+   <span class="k">return</span> <span class="p">{</span> <span class="na">color</span><span class="p">:</span> <span class="nx">nextProps</span><span class="p">.</span><span class="nx">color</span> <span class="p">};</span>
+ <span class="p">}</span>
+ <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="p">}</span>
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">render</code>: UI를 랜더링 하는 메서드 (당연하다…)
+    <ul>
+      <li>컴포넌트의 모양을 정의한다.</li>
+      <li><code class="language-plaintext highlighter-rouge">this.props</code>와 <code class="language-plaintext highlighter-rouge">this.state</code>에 접근할 수 있으며 리엑트 요소를 반환한다.</li>
+      <li>이 메서드 안에서는 이벤트 설정이 아닌 곳에서 <code class="language-plaintext highlighter-rouge">setState</code>를 사용해서는 안되며, 브라우저의 DOM에 접근해서는 안된다. -&gt; DOM 정보를 가져오거나 <code class="language-plaintext highlighter-rouge">state</code>에 변화를 줄 때는 <code class="language-plaintext highlighter-rouge">componentDidMount</code>에서 처리해야 함.</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">componentDidMount</code>: 컴포넌트가 웹 브라우저 상에 나타난 후 호출하는 메서드
+    <ul>
+      <li>자바스크립트 라이브러리 혹은 프레임워크 함수를 호출하거나 이벤트 등록, setTimeout 등등의 비동기 작업을 처리하면 됨.</li>
+    </ul>
+  </li>
+</ul>
+
+<h5 id="update">update</h5>
+<h6 id="컴포넌트에서-업데이트가-일어나는-경우">컴포넌트에서 업데이트가 일어나는 경우</h6>
+<ul>
+  <li>부모 컴포넌트에서 넘겨주는  <code class="language-plaintext highlighter-rouge">props</code>가 바뀔 때</li>
+  <li>컴포넌트 자신이 들고 있는 <code class="language-plaintext highlighter-rouge">state</code> 가 바뀔 때</li>
+  <li>부모 컴포넌트가 리랜더링 될 때</li>
+  <li><code class="language-plaintext highlighter-rouge">this.forceUpdate</code>를 통해 강제로 랜더링을 트리거 할 때</li>
+</ul>
+
+<h6 id="업데이트에서의-라이프-사이클-메서드">업데이트에서의 라이프 사이클 메서드</h6>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">getDerivedStateFromProps</code>메서드의 경우 마운트 과정에서도 호출 되지만, 업데이트가 시작하기 전에도 호출된다. -&gt; props의 변화에 따라 state 값에 변화를 주고 싶을 때 활용하기 유용하다.</li>
+  <li><code class="language-plaintext highlighter-rouge">shouldComponentUpdate</code> : 컴포넌트가 리랜더링 되어야 할지 말아야 할지를 결정하는 메서드. 이 메서드에는 boolean 값을 반환해야 함.
+    <ul>
+      <li>true가 반환되었을 때 라이프 사이클 메서드를 계속 실행, false일 경우 작업을 중지(리랜더링X) -&gt; 컴포넌트를 최적화 할 때 사용.</li>
+      <li>만약 특정 함수에서 <code class="language-plaintext highlighter-rouge">this.forceUpdate</code>를 호출하면 이 과정을 생략하고 <code class="language-plaintext highlighter-rouge">render</code>함수를 호출</li>
+      <li>이 메서드 안에서는 <code class="language-plaintext highlighter-rouge">props</code>와 <code class="language-plaintext highlighter-rouge">state</code>는 <code class="language-plaintext highlighter-rouge">this</code>를 통해 접근 가능함. 새로 설정된 <code class="language-plaintext highlighter-rouge">props</code>와 <code class="language-plaintext highlighter-rouge">state</code>는 <code class="language-plaintext highlighter-rouge">nextProps</code>와 <code class="language-plaintext highlighter-rouge">nextState</code>를 통해 접근 가능하다.
+        <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">shouldComponentUpdate</span><span class="p">(</span><span class="nx">nextProps</span><span class="p">,</span> <span class="nx">nextState</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">shouldComponentUpdate</span><span class="dl">"</span><span class="p">,</span> <span class="nx">nextProps</span><span class="p">,</span> <span class="nx">nextState</span><span class="p">);</span>
+  <span class="c1">// 숫자의 마지막 자리가 4면 리렌더링하지 않습니다</span>
+  <span class="k">return</span> <span class="nx">nextState</span><span class="p">.</span><span class="nx">number</span> <span class="o">%</span> <span class="mi">10</span> <span class="o">!==</span> <span class="mi">4</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">render</code> : 컴포넌트를 리랜더링 (당연함…)</li>
+  <li><code class="language-plaintext highlighter-rouge">getSnapshotBeforeUpdate</code> : 컴포넌트 변화를 DOM에 반영하기 바로 직전에 호출하는 메서드
+    <ul>
+      <li>리엑트 16.3 이후부터 만들어진 메서드.</li>
+      <li><code class="language-plaintext highlighter-rouge">render</code>에서 만들어진 결과물이 브라우저에 노출되기 직전에 호출.</li>
+      <li>이 메서드에서 반환하는 값은 해당 메서드의 세번째 파라미터인 <code class="language-plaintext highlighter-rouge">snapshot</code>을 통해 전달받을 수 있다. -&gt; 업데이트 직전의 값을 참고할 일이 있을 때 활용.
+        <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">getSnapshotBeforeUpdate</span><span class="p">(</span><span class="nx">prevProps</span><span class="p">,</span> <span class="nx">prevState</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">getSnapshotBeforeUpdate</span><span class="dl">"</span><span class="p">);</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">prevProps</span><span class="p">.</span><span class="nx">color</span> <span class="o">!==</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">color</span><span class="p">)</span> <span class="p">{</span>
+<span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">myRef</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">color</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">componentDidUpdate</code> : 컴포넌트의 업데이트 작업이 끝난 후 호출하는 메서드.
+    <ul>
+      <li>리랜더링이 완료된 후 실행되므로 DOM에 접근 가능!</li>
+      <li>컴포넌트가 이전에 가졌던 데이터를 <code class="language-plaintext highlighter-rouge">prevProps</code> 및 <code class="language-plaintext highlighter-rouge">prevState</code>를 통해 접근 가능. <code class="language-plaintext highlighter-rouge">getSnapshotBeforeUpdate</code>에서 전달받은 값이 있다면, <code class="language-plaintext highlighter-rouge">snapshot</code>을 통해 전달 받을 수 있음.
+        <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">componentDidUpdate</span><span class="p">(</span><span class="nx">prevProps</span><span class="p">,</span> <span class="nx">prevState</span><span class="p">,</span> <span class="nx">snapshot</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">componentDidUpdate</span><span class="dl">"</span><span class="p">,</span> <span class="nx">prevProps</span><span class="p">,</span> <span class="nx">prevState</span><span class="p">);</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">snapshot</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">업데이트 되기 직전 색상: </span><span class="dl">"</span><span class="p">,</span> <span class="nx">snapshot</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h5 id="unmount">unmount</h5>
+<p>컴포넌트를 DOM에서 제거하는 과정.</p>
+<h6 id="언마운트에서의-라이프-사이클-메서드">언마운트에서의 라이프 사이클 메서드</h6>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">componentWillUnmount</code> 컴포넌트가 웹 브라우저 상에서 사라지기 전에 호출하는 메서드.
+    <ul>
+      <li>이벤트, 타이머, 직접 생성한 DOM을 해당 과정에서 제거해 줘야함</li>
+    </ul>
+  </li>
+</ul>
+
+<h5 id="error">error</h5>
+<p><code class="language-plaintext highlighter-rouge">componentDidCatch </code> : 컴포넌트 랜더링 도중 에러가 발생했을 때, 오류 UI를 발생시키게 해준다.</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nx">componentDidCatch</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">info</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Example "componentStack":</span>
+    <span class="c1">//   in ComponentThatThrows (created by App)</span>
+    <span class="c1">//   in ErrorBoundary (created by App)</span>
+    <span class="c1">//   in div (created by App)</span>
+    <span class="c1">//   in App</span>
+    <span class="nx">logComponentStackToMyService</span><span class="p">(</span><span class="nx">info</span><span class="p">.</span><span class="nx">componentStack</span><span class="p">);</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="react-hooks">react HOOKS</h3>
+<h6 id="usestate">useState</h6>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">useState</code>는 한번에 하나의 상태값만 관리할 수 있다.</li>
+  <li>관리할 상태가 여러개라면 그냥 여러번 사용하면 됨.</li>
+</ul>
+
+<h6 id="useeffect">useEffect</h6>
+<ul>
+  <li>리액트 컴포넌트가 랜더링 될 때마다 특정 작업을 수행할 수 있도록 설정</li>
+  <li><code class="language-plaintext highlighter-rouge">useEffect</code>의 첫번째 파라미터는 마운트 시에, 두번째 파라미터는 업데이트 시에 동작되므로, 처음 랜더링 될 때에만 실행시키고 싶을 때는 빈 배열을 넣어주면 된다.</li>
+</ul>
+
+<h6 id="usereducer">useReducer</h6>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">useState</code>보다 더 다양한 컴포넌트 상황에 따라 다양한 상태를 다른 값으로 업데이트 해주고 싶을 때 사용하는 Hook.</li>
+  <li>컴포넌트의 상태 업데이트 로직을 컴포넌트에서 분리시킬 수 있음</li>
+  <li>상태 업데이트 로직을 컴포넌트 바깥에 작성 할 수도 있음</li>
+  <li>다른 파일에 작성 후 불러와서 사용 할 수 있음
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">reducer</span><span class="p">(</span><span class="nx">state</span><span class="p">,</span> <span class="nx">action</span><span class="p">)</span> <span class="p">{</span>
+<span class="c1">// 새로운 상태를 만드는 로직</span>
+<span class="c1">// const nextState = ...</span>
+<span class="k">return</span> <span class="nx">nextState</span><span class="p">;</span> <span class="c1">// reducer에서 반환하는 값이 곧 state의 새로운 상태.</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h6 id="코드-예시">코드 예시</h6>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">useReducer</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">reducer</span><span class="p">(</span><span class="nx">state</span><span class="p">,</span> <span class="nx">action</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">switch</span> <span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="nx">type</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="dl">'</span><span class="s1">INCREMENT</span><span class="dl">'</span><span class="p">:</span>
+      <span class="k">return</span> <span class="nx">state</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">case</span> <span class="dl">'</span><span class="s1">DECREMENT</span><span class="dl">'</span><span class="p">:</span>
+      <span class="k">return</span> <span class="nx">state</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="nl">default</span><span class="p">:</span>
+      <span class="k">return</span> <span class="nx">state</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">Counter</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">number</span><span class="p">,</span> <span class="nx">dispatch</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useReducer</span><span class="p">(</span><span class="nx">reducer</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+
+  <span class="kd">const</span> <span class="nx">onIncrease</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">dispatch</span><span class="p">({</span> <span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">INCREMENT</span><span class="dl">'</span> <span class="p">});</span>
+  <span class="p">};</span>
+
+  <span class="kd">const</span> <span class="nx">onDecrease</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">dispatch</span><span class="p">({</span> <span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">DECREMENT</span><span class="dl">'</span> <span class="p">});</span>
+  <span class="p">};</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">number</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">onIncrease</span><span class="p">}</span><span class="o">&gt;+</span><span class="mi">1</span><span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">onDecrease</span><span class="p">}</span><span class="o">&gt;-</span><span class="mi">1</span><span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">Counter</span><span class="p">;</span>
+</code></pre></div></div>
+:ET
