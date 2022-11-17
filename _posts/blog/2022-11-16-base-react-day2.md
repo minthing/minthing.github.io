@@ -26,7 +26,7 @@ tags:
 // this.input은 unput 요소의 DOM으로 지정됨.
 ```
 
-###### createRef를 통한 설정
+###### createRef를 통한 설정
 
 * 16 이후 버전부터는 다음과 같은 방법을 통해서 만들라고 함.
 
@@ -62,6 +62,7 @@ export default RefSample;
 https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F9940E34F5EE2947508
 
 **scrollBox.js**
+
 ```javascript
 import React, {Component} from 'react';
 
@@ -106,6 +107,8 @@ export default ScrollBox;
 
 **App.js**
 * 클래스형으로 변경한 줄도 모르고 개삽질함
+
+
 ```javascript
 import React, { Component } from "react";
 import ScrollBox from "./ScrollBox";
@@ -132,6 +135,7 @@ export default App;
 ### 컴포넌트 반복
 ###### map함수
 * 배열 내의 모든 요소 각각에 대하여 주어진 함수를 호출한 결과를 모아 새로운 배열을 반환함
+
 ```javascript
 const array1 = [1, 4, 9, 16];
 
